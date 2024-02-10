@@ -9,7 +9,7 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 221.2 83.2% 53.3%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -21,8 +21,8 @@
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 1rem;
   }
   .dark {
     --background: 222.2 84% 4.9%;
@@ -31,7 +31,7 @@
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
     --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -43,7 +43,7 @@
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 224.3 76.3% 48%;
   }
 }
 @layer base {
@@ -54,7 +54,7 @@
     @apply bg-background text-foreground;
   }
   h1 {
-    @apply text-4xl md:text-5xl;
+    @apply text-3xl md:text-5xl;
   }
   h2 {
     @apply text-3xl md:text-4xl;
@@ -63,7 +63,7 @@
     @apply text-2xl md:text-3xl;
   }
   h4 {
-    @apply text-xl md:text-2xl;
+    @apply text-lg md:text-2xl;
   }
   h5 {
     @apply text-lg md:text-xl;
@@ -77,5 +77,10 @@
   }
   small {
     @apply text-xs md:text-sm;
+  }
+}
+@layer utilities {
+  .page-container {
+    @apply max-w-7xl px-5 mx-auto;
   }
 }/*# sourceMappingURL=globals.css.map */
