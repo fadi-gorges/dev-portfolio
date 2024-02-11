@@ -74,14 +74,14 @@ const config = {
           to: { height: "0" },
         },
         glow: {
-          from: { filter: "blur(40px)" },
+          from: { filter: "blur(30px)" },
           to: { filter: "blur(64px)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        glow: "glow 1.5s ease-in-out infinite alternate",
+        glow: "glow 1s ease-in-out infinite alternate",
       },
     },
   },

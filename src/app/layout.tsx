@@ -40,7 +40,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Navbar />
           <div className="flex flex-col min-h-screen gap-10">
-            <div className="flex-1">{children}</div>
+            {children}
             <Footer />
           </div>
           <Toaster richColors closeButton />
