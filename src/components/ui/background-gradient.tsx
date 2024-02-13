@@ -1,7 +1,15 @@
 "use client";
 import { cn } from "@/lib/utils/cn";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { HTMLAttributes } from "react";
+
+type BackgroundGradientProps = HTMLAttributes<HTMLDivElement> & {
+  children?: React.ReactNode;
+  className?: string;
+  containerClassName?: string;
+  animate?: boolean;
+  circle?: boolean;
+};
 
 export const BackgroundGradient = ({
   children,
@@ -9,13 +17,8 @@ export const BackgroundGradient = ({
   containerClassName,
   animate = true,
   circle = false,
-}: {
-  children?: React.ReactNode;
-  className?: string;
-  containerClassName?: string;
-  animate?: boolean;
-  circle?: boolean;
-}) => {
+  ...props
+}: BackgroundGradientProps) => {
   const variants = {
     initial: {
       backgroundPosition: "0 50%",
@@ -25,7 +28,10 @@ export const BackgroundGradient = ({
     },
   };
   return (
-    <div className={cn("relative p-[4px] group", containerClassName)}>
+    <div
+      className={cn("relative p-[2px] group", containerClassName)}
+      {...props}
+    >
       <motion.div
         variants={animate ? variants : undefined}
         initial={animate ? "initial" : undefined}
@@ -43,9 +49,9 @@ export const BackgroundGradient = ({
           backgroundSize: animate ? "400% 400%" : undefined,
         }}
         className={cn(
-          "absolute inset-0 z-[1] opacity-60 group-hover:opacity-100 blur-xl  transition duration-500",
+          "absolute inset-0 z-[1] opacity-20 group-hover:opacity-40 transition duration-500",
           circle ? "rounded-full" : "rounded-3xl",
-          " bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)]"
+          "bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)]"
         )}
       />
       <motion.div
@@ -67,7 +73,7 @@ export const BackgroundGradient = ({
         className={cn(
           "absolute inset-0 z-[1]",
           circle ? "rounded-full" : "rounded-3xl",
-          "bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)]"
+          "opacity-10  bg-[radial-gradient(circle_farthest-side_at_0_100%,#00ccb1,transparent),radial-gradient(circle_farthest-side_at_100%_0,#7b61ff,transparent),radial-gradient(circle_farthest-side_at_100%_100%,#ffc414,transparent),radial-gradient(circle_farthest-side_at_0_0,#1ca0fb,#141316)]"
         )}
       />
 

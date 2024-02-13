@@ -87,6 +87,7 @@ const config = {
   },
   plugins: [
     require("tailwindcss-animate"),
+    require("tailwindcss-3d"),
     addVariablesForColors,
     function ({ matchUtilities, theme }: any) {
       matchUtilities(

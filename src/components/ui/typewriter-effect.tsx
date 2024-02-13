@@ -6,6 +6,7 @@ import { useEffect } from "react";
 
 export const TypewriterEffect = ({
   words,
+  speed = 0.1,
   className,
   cursorClassName,
 }: {
@@ -13,6 +14,7 @@ export const TypewriterEffect = ({
     text: string;
     className?: string;
   }[];
+  speed?: number;
   className?: string;
   cursorClassName?: string;
 }) => {
@@ -36,7 +38,7 @@ export const TypewriterEffect = ({
         },
         {
           duration: 0.3,
-          delay: stagger(0.1),
+          delay: stagger(speed),
           ease: "easeInOut",
         }
       );
@@ -81,7 +83,7 @@ export const TypewriterEffect = ({
           repeatType: "reverse",
         }}
         className={cn(
-          "inline-block rounded-sm w-[4px] h-7 md:h-10 bg-foreground translate-y-0.5",
+          "inline-block rounded-sm w-[4px] h-7 md:h-10 bg-foreground translate-y-0.5 -translate-x-0.5",
           cursorClassName
         )}
       ></motion.span>

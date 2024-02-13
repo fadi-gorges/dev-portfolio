@@ -1,8 +1,9 @@
 "use client";
-import Icons from "@/components/Icons";
+import Icons, { SvgIconProps } from "@/components/Icons";
 import { cn } from "@/lib/utils/cn";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
+import { useState } from "react";
 
 const skills: HoverCardItem[] = [
   {
@@ -48,44 +49,30 @@ const skills: HoverCardItem[] = [
 ];
 
 const SkillsSection = () => {
-  const skillsRef = useRef(null);
-  const skillsInView = useInView(skillsRef, {
-    once: true,
-    margin: "0px 0px -100px 0px",
-  });
-
   return (
-    <div
-      ref={skillsRef}
-      className={cn(
-        "py-14 bg-gradient-to-br from-primary/10 to-teal-500/20 transition duration-200",
-        skillsInView ? "" : "opacity-0"
-      )}
-    >
-      <div id="skills-section" className="page-container">
-        <h3
-          className={cn(
-            "px-3 text-primary font-bold transition-opacity delay-200 duration-300",
-            skillsInView ? "" : "opacity-0"
-          )}
-        >
+    <div className="in-view py-14 bg-gradient-to-br from-primary/10 to-teal-500/20 [&:not(.show)]:opacity-0 transition-opacity duration-200">
+      <div
+        id="skills-section"
+        className="page-container flex flex-col gap-5 lg:gap-10"
+      >
+        <h3 className="in-view text-primary font-bold [&:not(.show)]:opacity-0 transition-opacity delay-200 duration-300">
           MY SKILLS
         </h3>
-        <HoverEffect
-          items={skills}
-          inView={skillsInView}
-          className="mt-5 lg:mt-10"
-        />
+        <HoverEffect items={skills} className="scale-105 lg:scale-100" />
+        <h4
+          className="in-view text-end [&:not(.show)]:opacity-0 [&:not(.show)]:translate-y-5"
+          style={{
+            transitionProperty: "translate, opacity",
+            transitionDuration: "0.3s",
+            transitionDelay: "1.5s",
+          }}
+        >
+          and more...
+        </h4>
       </div>
     </div>
   );
 };
-
-import { SvgIconProps } from "@/components/Icons";
-import { FollowerPointerCard } from "@/components/ui/following-pointer";
-import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
-import { useState } from "react";
 
 type HoverCardItem = {
   title: string;
@@ -95,11 +82,9 @@ type HoverCardItem = {
 
 const HoverEffect = ({
   items,
-  inView,
   className,
 }: {
   items: HoverCardItem[];
-  inView: boolean;
   className?: string;
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -107,44 +92,37 @@ const HoverEffect = ({
   return (
     <div className={cn("grid grid-cols-4", className)}>
       {items.map((item, idx) => (
-        <FollowerPointerCard
-          key={item?.link}
-          title={item.link.replace("https://", "").replace("www.", "")}
+        <Link
+          key={item.title}
+          href={item?.link}
+          target="_blank"
+          className="in-view relative group block w-full p-1 text-foreground [&:not(.show)]:opacity-0 [&:not(.show)]:-translate-x-10 transition duration-500"
+          style={{
+            transitionProperty: "opacity, translate",
+            transitionDelay: `${0.5 + idx * 0.1}s`,
+          }}
+          onMouseEnter={() => setHoveredIndex(idx)}
+          onMouseLeave={() => setHoveredIndex(null)}
         >
-          <Link
-            href={item?.link}
-            target="_blank"
-            style={{
-              transitionProperty: "opacity, transform",
-              transitionDelay: `${0.5 + idx * 0.1}s`,
-            }}
-            className={cn(
-              "relative group block h-full w-full p-1 cursor-none text-foreground duration-500",
-              inView ? "" : "opacity-0 -translate-x-10"
+          <AnimatePresence>
+            {hoveredIndex === idx && (
+              <motion.span
+                className="absolute inset-0 h-full w-full bg-foreground/5 block rounded-3xl"
+                layoutId="hoverBackground"
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                  transition: { duration: 0.15 },
+                }}
+                exit={{
+                  opacity: 0,
+                  transition: { duration: 0.15, delay: 0.2 },
+                }}
+              />
             )}
-            onMouseEnter={() => setHoveredIndex(idx)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            <AnimatePresence>
-              {hoveredIndex === idx && (
-                <motion.span
-                  className="absolute inset-0 h-full w-full bg-foreground/5 block rounded-3xl"
-                  layoutId="hoverBackground"
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: 1,
-                    transition: { duration: 0.15 },
-                  }}
-                  exit={{
-                    opacity: 0,
-                    transition: { duration: 0.15, delay: 0.2 },
-                  }}
-                />
-              )}
-            </AnimatePresence>
-            <Card item={item} />
-          </Link>
-        </FollowerPointerCard>
+          </AnimatePresence>
+          <Card item={item} />
+        </Link>
       ))}
     </div>
   );

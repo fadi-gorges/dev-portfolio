@@ -27,16 +27,16 @@ import { AnchorHTMLAttributes, useState } from "react";
 
 type Link = {
   text?: string;
-  href: string;
+  link: string;
   icon: LucideIcon | ((props: any) => JSX.Element);
 };
 
 const links = {
-  logo: { href: "/", icon: Icons.iconSvg },
-  home: { text: "Home", href: "/", icon: HomeIcon },
-  about: { text: "About Me", href: "/about", icon: CircleUserIcon },
-  projects: { text: "Projects", href: "/projects", icon: CodeSquareIcon },
-  contact: { text: "Contact", href: "/contact", icon: MailIcon },
+  logo: { link: "/", icon: Icons.iconSvg },
+  home: { text: "Home", link: "/", icon: HomeIcon },
+  about: { text: "About Me", link: "/about", icon: CircleUserIcon },
+  projects: { text: "Projects", link: "/projects", icon: CodeSquareIcon },
+  contact: { text: "Contact", link: "/contact", icon: MailIcon },
 };
 
 const Navbar = () => {
@@ -79,6 +79,7 @@ const Navbar = () => {
           "relative page-container mt-0.5 lg:mt-1 px-4 lg:px-10 py-2 lg:py-4 flex gap-2 items-center rounded-full border-foreground/5 overflow-hidden transition",
           scrollY !== 0 && "bg-background/85 backdrop-blur-md border"
         )}
+        style={{ transitionProperty: "background-color, backdrop-filter" }}
       >
         <div
           className="absolute left-0 bottom-0 h-0.5 bg-primary/80"
@@ -108,14 +109,14 @@ const NavLink = ({
   const pathname = usePathname();
   const isActive =
     !link.text ||
-    (link.href === "/"
-      ? pathname === link.href
-      : pathname.startsWith(link.href));
+    (link.link === "/"
+      ? pathname === link.link
+      : pathname.startsWith(link.link));
 
   return drawerLink ? (
     <SheetClose asChild>
       <Link
-        href={link.href}
+        href={link.link}
         className={cn(
           "flex justify-start items-center gap-4",
           isActive
@@ -131,7 +132,7 @@ const NavLink = ({
     </SheetClose>
   ) : (
     <Link
-      href={link.href}
+      href={link.link}
       className={cn(
         buttonVariants({
           variant: "ghost",
