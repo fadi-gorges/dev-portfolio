@@ -7,6 +7,8 @@ export const useScrollPosition = () => {
   const [scrollPosition, setScrollPosition] = useState({
     scrollY: 0,
     scrollX: 0,
+    scrollYProgress: 0,
+    scrollXProgress: 0,
   });
 
   useEffect(() => {
@@ -14,6 +16,10 @@ export const useScrollPosition = () => {
       setScrollPosition({
         scrollY: window.scrollY,
         scrollX: window.scrollX,
+        scrollYProgress:
+          window.scrollY / (document.body.scrollHeight - window.innerHeight),
+        scrollXProgress:
+          window.scrollX / (document.body.scrollWidth - window.innerWidth),
       });
     };
 
@@ -29,6 +35,8 @@ export const useScrollPosition = () => {
     setScrollPosition({
       scrollY: window.scrollY,
       scrollX: window.scrollX,
+      scrollYProgress: 0,
+      scrollXProgress: 0,
     });
   }, [pathname]);
 

@@ -26,7 +26,7 @@ const skills: HoverCardItem[] = [
     icon: Icons.nextjs,
   },
   {
-    title: "PayloadCMS",
+    title: "Payload",
     link: "https://payloadcms.com",
     icon: Icons.payload,
   },
@@ -119,7 +119,7 @@ const HoverEffect = ({
               transitionDelay: `${0.5 + idx * 0.1}s`,
             }}
             className={cn(
-              "relative group block h-full w-full p-2 cursor-none text-foreground duration-300",
+              "relative group block h-full w-full p-1 cursor-none text-foreground duration-500",
               inView ? "" : "opacity-0 -translate-x-10"
             )}
             onMouseEnter={() => setHoveredIndex(idx)}
@@ -153,12 +153,12 @@ const HoverEffect = ({
 const Card = ({ item }: { item: HoverCardItem }) => {
   return (
     <div className="relative h-full w-full p-4 lg:py-5 bg-background dark:bg-secondary border rounded-2xl z-10">
-      <div className="flex justify-center lg:justify-start items-center gap-4 lg:gap-5">
+      <div className="flex flex-col lg:flex-row justify-center lg:justify-start items-center gap-4 lg:gap-5">
         <item.icon
           size={50}
           className="lg:w-16 lg:h-16 bg-background dark:bg-foreground rounded-full p-1"
         />
-        <h6 className="hidden lg:inline">{item.title}</h6>
+        <small className="lg:text-lg">{item.title}</small>
       </div>
     </div>
   );

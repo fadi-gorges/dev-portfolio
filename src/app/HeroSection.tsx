@@ -31,7 +31,6 @@ const HeroSection = () => {
       />
       <div className="page-container h-full grid grid-cols-12 gap-y-10">
         <div className="col-span-12 lg:col-span-4 lg:col-start-9 flex flex-col justify-end items-center lg:justify-center lg:items-start">
-          {/* <BackgroundGradient circle> */}
           <div className="relative">
             <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500 to-teal-500 transform scale-[0.80] rounded-full animate-glow -z-10" />
             <Image
@@ -42,7 +41,6 @@ const HeroSection = () => {
               className="w-56 h-56 rounded-full lg:w-fit lg:h-fit border-4 border-primary/20"
             />
           </div>
-          {/* </BackgroundGradient> */}
         </div>
         <div className="col-span-12 lg:row-start-1 lg:col-span-7 flex flex-col gap-5 lg:gap-8 lg:justify-center">
           <h1 className="font-extrabold text-primary tracking-wide">

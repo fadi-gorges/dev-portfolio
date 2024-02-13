@@ -42,7 +42,7 @@ const links = {
 const Navbar = () => {
   const pathname = usePathname();
 
-  const { scrollY } = useScrollPosition();
+  const { scrollY, scrollYProgress } = useScrollPosition();
 
   const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -76,12 +76,16 @@ const Navbar = () => {
     <nav className="fixed w-full z-40">
       <div
         className={cn(
-          "page-container mt-0.5 lg:mt-1 px-4 lg:px-10 py-2 lg:py-4 flex gap-2 items-center rounded-full border-foreground/5 transition",
+          "relative page-container mt-0.5 lg:mt-1 px-4 lg:px-10 py-2 lg:py-4 flex gap-2 items-center rounded-full border-foreground/5 overflow-hidden transition",
           scrollY !== 0 && "bg-background/85 backdrop-blur-md border"
         )}
       >
+        <div
+          className="absolute left-0 bottom-0 h-0.5 bg-primary/80"
+          style={{ width: `${scrollYProgress * 100}%` }}
+        />
         <NavLink link={links.logo} className="flex" />
-        <NavLink link={links.home} className="text-foreground" />
+        <NavLink link={links.home} />
         <NavLink link={links.about} className="ml-auto" />
         <NavLink link={links.projects} />
         <NavLink link={links.contact} />
