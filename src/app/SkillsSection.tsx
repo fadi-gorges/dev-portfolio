@@ -1,5 +1,6 @@
 "use client";
-import Icons, { SvgIconProps } from "@/components/Icons";
+import { Icons, MonoIcons, SVGIconProps } from "@/components/Icons";
+import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils/cn";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
@@ -39,12 +40,12 @@ const skills: HoverCardItem[] = [
   {
     title: "Django",
     link: "https://www.djangoproject.com",
-    icon: Icons.django,
+    icon: MonoIcons.django,
   },
   {
     title: "Unity",
     link: "https://unity.com",
-    icon: Icons.unity,
+    icon: MonoIcons.unity,
   },
 ];
 
@@ -72,7 +73,7 @@ const SkillsSection = () => {
 
 type HoverCardItem = {
   title: string;
-  icon: (props: SvgIconProps) => JSX.Element;
+  icon: React.ComponentType<SVGIconProps>;
   link: string;
 };
 
@@ -114,24 +115,24 @@ const HoverEffect = ({
               />
             )}
           </AnimatePresence>
-          <Card item={item} />
+          <SkillCard item={item} />
         </Link>
       ))}
     </div>
   );
 };
 
-const Card = ({ item }: { item: HoverCardItem }) => {
+const SkillCard = ({ item }: { item: HoverCardItem }) => {
   return (
-    <div className="relative h-full w-full p-4 lg:py-5 bg-background dark:bg-secondary border rounded-2xl z-10">
+    <Card className="relative h-full w-full p-4 lg:py-5 bg-background dark:bg-secondary border rounded-2xl z-10">
       <div className="flex flex-col lg:flex-row justify-center lg:justify-start items-center gap-4 lg:gap-5">
         <item.icon
           size={50}
-          className="lg:w-16 lg:h-16 bg-background dark:bg-foreground rounded-full p-1"
+          className="lg:w-16 lg:h-16 bg-background dark:bg-foreground text-foreground dark:text-background rounded-full p-1"
         />
         <p>{item.title}</p>
       </div>
-    </div>
+    </Card>
   );
 };
 

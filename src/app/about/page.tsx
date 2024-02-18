@@ -1,3 +1,5 @@
+import Main from "@/components/page/Main";
+import Title from "@/components/page/Title";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -6,7 +8,11 @@ export const metadata: Metadata = {
 };
 
 const AboutPage = () => {
-  return <main></main>;
+  return (
+    <Main>
+      <Title>About Me</Title>
+    </Main>
+  );
 };
 
 export default AboutPage;

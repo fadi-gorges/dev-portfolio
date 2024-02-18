@@ -52,7 +52,7 @@ const ContactForm = ({ className }: ContactFormProps) => {
           name="name"
           render={({ field }) => (
             <FormItem className="w-full">
-              <FormLabel>
+              <FormLabel className="text-muted-foreground">
                 <p>Your Name *</p>
               </FormLabel>
               <FormControl>
@@ -67,7 +67,7 @@ const ContactForm = ({ className }: ContactFormProps) => {
           name="email"
           render={({ field }) => (
             <FormItem className="w-full">
-              <FormLabel>
+              <FormLabel className="text-muted-foreground">
                 <p>Your Email *</p>
               </FormLabel>
               <FormControl>
@@ -88,7 +88,7 @@ const ContactForm = ({ className }: ContactFormProps) => {
           name="message"
           render={({ field }) => (
             <FormItem className="w-full">
-              <FormLabel>
+              <FormLabel className="text-muted-foreground">
                 <p>Message *</p>
               </FormLabel>
               <FormControl>

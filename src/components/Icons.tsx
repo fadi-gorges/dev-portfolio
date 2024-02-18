@@ -1,5 +1,12 @@
 import { cn } from "@/lib/utils/cn";
-import { Code2Icon } from "lucide-react";
+import {
+  AppWindowIcon,
+  BlocksIcon,
+  Code2Icon,
+  DatabaseIcon,
+  GlobeIcon,
+  MonitorSmartphoneIcon,
+} from "lucide-react";
 import Image from "next/image";
 
 export interface ImageIconProps
@@ -7,7 +14,7 @@ export interface ImageIconProps
   size?: number;
 }
 
-export interface SvgIconProps extends React.SVGAttributes<SVGElement> {
+export interface SVGIconProps extends React.SVGAttributes<SVGElement> {
   size?: number;
 }
 
@@ -22,44 +29,14 @@ const Icon = ({ className, size = 24, ...props }: ImageIconProps) => (
   />
 );
 
-const IconSvg = ({ className, size = 24, ...props }: SvgIconProps) => (
+const IconSvg = ({ className, size = 24, ...props }: SVGIconProps) => (
   <Code2Icon className={className} size={size} {...props} />
 );
 
-const LinkedinIcon = ({ className, size = 24, ...props }: SvgIconProps) => (
-  <svg
-    fill="currentColor"
-    className={className}
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    {...props}
-  >
-    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-  </svg>
-);
-
-const GithubIcon = ({ className, size = 24, ...props }: SvgIconProps) => (
-  <svg
-    fill="currentColor"
-    className={className}
-    xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    {...props}
-  >
-    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-  </svg>
-);
-
-const HTMLIcon = ({ className, size = 24, ...props }: SvgIconProps) => (
+const HTMLIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
   <svg
     className={className}
     xmlns="http://www.w3.org/2000/svg"
-    x="0px"
-    y="0px"
     width={size}
     height={size}
     viewBox="0 0 48 48"
@@ -78,15 +55,14 @@ const HTMLIcon = ({ className, size = 24, ...props }: SvgIconProps) => (
   </svg>
 );
 
-const TypeScriptIcon = ({ className, size = 24, ...props }: SvgIconProps) => (
+const TypeScriptIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
   <svg
     className={className}
     xmlns="http://www.w3.org/2000/svg"
-    x="0px"
-    y="0px"
     width={size}
     height={size}
     viewBox="0 0 48 48"
+    fill="currentColor"
     {...props}
   >
     <rect width="36" height="36" x="6" y="6" fill="#1976d2"></rect>
@@ -101,15 +77,14 @@ const TypeScriptIcon = ({ className, size = 24, ...props }: SvgIconProps) => (
   </svg>
 );
 
-const ReactIcon = ({ className, size = 24, ...props }: SvgIconProps) => (
+const ReactIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
   <svg
     className={className}
     xmlns="http://www.w3.org/2000/svg"
-    x="0px"
-    y="0px"
     width={size}
     height={size}
     viewBox="-10 -10 100 100"
+    fill="currentColor"
     {...props}
   >
     <path
@@ -133,15 +108,14 @@ const ReactIcon = ({ className, size = 24, ...props }: SvgIconProps) => (
   </svg>
 );
 
-const NextjsIcon = ({ className, size = 24, ...props }: SvgIconProps) => (
+const NextjsIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
   <svg
     className={className}
     xmlns="http://www.w3.org/2000/svg"
-    x="0px"
-    y="0px"
     width={size}
     height={size}
     viewBox="0 0 48 48"
+    fill="currentColor"
     {...props}
   >
     <path
@@ -151,15 +125,14 @@ const NextjsIcon = ({ className, size = 24, ...props }: SvgIconProps) => (
   </svg>
 );
 
-const PythonIcon = ({ className, size = 24, ...props }: SvgIconProps) => (
+const PythonIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
   <svg
     className={className}
     xmlns="http://www.w3.org/2000/svg"
-    x="0px"
-    y="0px"
     width={size}
     height={size}
     viewBox="0 0 48 48"
+    fill="currentColor"
     {...props}
   >
     <path
@@ -173,22 +146,7 @@ const PythonIcon = ({ className, size = 24, ...props }: SvgIconProps) => (
   </svg>
 );
 
-const DjangoIcon = ({ className, size = 24, ...props }: SvgIconProps) => (
-  <svg
-    className={cn("text-[#0C4B33]", className)}
-    xmlns="http://www.w3.org/2000/svg"
-    x="0px"
-    y="0px"
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    {...props}
-  >
-    <path d="M 11 3 L 11 8.1582031 C 10.653 8.0172031 9.9041562 8 9.5351562 8 C 6.7591563 8 4.1894531 9.306 4.1894531 13 C 4.1894531 17.42 7.67 18 10 18 C 10.92 18 13 17.909141 14 17.619141 L 14 3 L 11 3 z M 16 3 L 16 6 L 19 6 L 19 3 L 16 3 z M 16 8 L 16 16.701172 C 16 18.217172 15.078 19.795172 13 20.701172 L 15.859375 21.996094 C 18.765375 20.996094 19 17.701172 19 16.701172 L 19 8 L 16 8 z M 9.9707031 10.550781 C 10.290703 10.550781 10.65 10.609453 11 10.689453 L 11 15.392578 C 10.65 15.472578 10.290703 15.533203 9.9707031 15.533203 C 8.6607031 15.533203 7.390625 15.12 7.390625 13 C 7.390625 10.88 8.6607031 10.550781 9.9707031 10.550781 z"></path>
-  </svg>
-);
-
-const PayloadIcon = ({ className, size = 24, ...props }: SvgIconProps) => (
+const PayloadIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
   <svg
     className={className}
     viewBox="0 0 25 25"
@@ -209,34 +167,302 @@ const PayloadIcon = ({ className, size = 24, ...props }: SvgIconProps) => (
   </svg>
 );
 
-const UnityIcon = ({ className, size = 24, ...props }: SvgIconProps) => (
-  <svg
-    className={className}
-    xmlns="http://www.w3.org/2000/svg"
-    x="0px"
-    y="0px"
-    width={size}
-    height={size}
-    viewBox="1 -2.5 55 55"
-    {...props}
-  >
-    <path d="M 40.449219 3 C 40.359375 2.996094 40.265625 3.007813 40.175781 3.03125 L 23.765625 7.03125 C 23.449219 7.105469 23.191406 7.328125 23.074219 7.628906 L 21.324219 12 L 16 12 C 15.722656 12 15.453125 12.117188 15.265625 12.324219 L 3.265625 25.324219 C 2.894531 25.722656 2.914063 26.347656 3.3125 26.722656 L 15.890625 38.722656 C 16.078125 38.902344 16.324219 39 16.582031 39 L 22.324219 39 L 24.074219 43.371094 C 24.199219 43.695313 24.488281 43.925781 24.828125 43.984375 L 42.289063 46.984375 C 42.816406 47.078125 43.320313 46.734375 43.4375 46.214844 L 46.976563 29.984375 C 47.03125 29.734375 46.988281 29.46875 46.855469 29.25 L 44.527344 25.429688 L 46.902344 20.429688 C 47.015625 20.191406 47.03125 19.917969 46.941406 19.671875 L 41.359375 3.671875 C 41.222656 3.28125 40.859375 3.015625 40.449219 3 Z M 39.769531 5.1875 L 44.921875 19.941406 L 43.445313 23.046875 L 39.953125 11.703125 C 39.824219 11.277344 39.421875 10.988281 38.972656 11 C 38.605469 11.011719 38.269531 11.222656 38.105469 11.550781 L 31.105469 25.550781 C 30.945313 25.871094 30.96875 26.25 31.164063 26.546875 L 39.164063 38.757813 C 39.382813 39.09375 39.785156 39.261719 40.179688 39.191406 C 40.570313 39.121094 40.886719 38.820313 40.972656 38.429688 L 43.453125 27.515625 L 44.9375 29.949219 L 41.6875 44.851563 L 25.71875 42.109375 L 24.601563 39.3125 L 36.183594 41.464844 C 36.578125 41.535156 36.980469 41.367188 37.199219 41.03125 C 37.421875 40.691406 37.421875 40.257813 37.195313 39.921875 L 28.828125 27.441406 C 28.644531 27.167969 28.332031 27 28 27 L 12 27 C 11.585938 27 11.214844 27.253906 11.066406 27.640625 C 10.917969 28.023438 11.023438 28.460938 11.328125 28.738281 L 20.414063 37 L 16.984375 37 L 5.402344 25.953125 L 16.4375 14 L 19.738281 14 L 11.261719 23.328125 C 10.992188 23.621094 10.925781 24.042969 11.085938 24.40625 C 11.246094 24.765625 11.605469 25 12 25 L 28 25 C 28.378906 25 28.726563 24.785156 28.894531 24.449219 L 35.894531 10.449219 C 36.046875 10.140625 36.035156 9.78125 35.859375 9.488281 C 35.683594 9.195313 35.375 9.011719 35.03125 9 C 34.945313 8.996094 34.859375 9.003906 34.777344 9.023438 L 23.640625 11.59375 L 24.734375 8.851563 Z M 33.15625 11.453125 L 27.382813 23 L 14.261719 23 L 22.53125 13.90625 Z M 38.78125 14.679688 L 41.964844 25.039063 L 39.546875 35.691406 L 33.152344 25.933594 Z M 14.585938 29 L 27.46875 29 L 34.210938 39.0625 L 23.464844 37.066406 Z"></path>
-  </svg>
-);
-
-const Icons = {
+export const Icons = {
   icon: Icon,
   iconSvg: IconSvg,
-  linkedin: LinkedinIcon,
-  github: GithubIcon,
   html: HTMLIcon,
   typeScript: TypeScriptIcon,
   react: ReactIcon,
   nextjs: NextjsIcon,
   payload: PayloadIcon,
   python: PythonIcon,
-  django: DjangoIcon,
-  unity: UnityIcon,
 };
 
-export default Icons;
+const LinkedinIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
+  <svg
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    {...props}
+  >
+    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+  </svg>
+);
+
+const GithubIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
+  <svg
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    {...props}
+  >
+    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+  </svg>
+);
+
+const HTMLMonoIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 50 50"
+    className={className}
+    width={size}
+    height={size}
+    fill="currentColor"
+    {...props}
+  >
+    <path d="M 45.273438 2.324219 C 45.085938 2.117188 44.816406 2 44.535156 2 L 5.464844 2 C 5.183594 2 4.914063 2.117188 4.726563 2.324219 C 4.535156 2.53125 4.441406 2.808594 4.46875 3.089844 L 7.988281 42.515625 C 8.023438 42.929688 8.3125 43.273438 8.710938 43.390625 L 24.722656 47.960938 C 24.808594 47.988281 24.902344 48 24.996094 48 C 25.089844 48 25.179688 47.988281 25.269531 47.960938 L 41.292969 43.390625 C 41.691406 43.273438 41.976563 42.929688 42.015625 42.515625 L 45.53125 3.089844 C 45.558594 2.808594 45.464844 2.53125 45.273438 2.324219 Z M 36.847656 15.917969 L 18.035156 15.917969 L 18.484375 21.007813 L 36.394531 21.007813 L 35.050781 36.050781 L 24.992188 39.089844 L 24.894531 39.058594 L 14.953125 36.046875 L 14.410156 29.917969 L 19.28125 29.917969 L 19.492188 32.296875 L 25.050781 33.460938 L 30.507813 32.296875 L 31.089844 25.859375 L 14.046875 25.859375 L 12.722656 11.054688 L 37.28125 11.054688 Z"></path>
+  </svg>
+);
+
+const TypeScriptMonoIcon = ({
+  className,
+  size = 24,
+  ...props
+}: SVGIconProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 48 48"
+    className={className}
+    width={size}
+    height={size}
+    fill="currentColor"
+    {...props}
+  >
+    <path d="M45,4H5C4.447,4,4,4.448,4,5v40c0,0.552,0.447,1,1,1h40c0.553,0,1-0.448,1-1V5C46,4.448,45.553,4,45,4z M29,26.445h-5V42h-4	V26.445h-5V23h14V26.445z M30.121,41.112v-4.158c0,0,2.271,1.712,4.996,1.712c2.725,0,2.62-1.782,2.62-2.026	c0-2.586-7.721-2.586-7.721-8.315c0-7.791,11.25-4.717,11.25-4.717l-0.14,3.704c0,0-1.887-1.258-4.018-1.258s-2.9,1.013-2.9,2.096	c0,2.795,7.791,2.516,7.791,8.141C42,44.955,30.121,41.112,30.121,41.112z"></path>
+  </svg>
+);
+
+const DjangoIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
+  <svg
+    className={cn("text-[#0C4B33]", className)}
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    {...props}
+  >
+    <path d="M 11 3 L 11 8.1582031 C 10.653 8.0172031 9.9041562 8 9.5351562 8 C 6.7591563 8 4.1894531 9.306 4.1894531 13 C 4.1894531 17.42 7.67 18 10 18 C 10.92 18 13 17.909141 14 17.619141 L 14 3 L 11 3 z M 16 3 L 16 6 L 19 6 L 19 3 L 16 3 z M 16 8 L 16 16.701172 C 16 18.217172 15.078 19.795172 13 20.701172 L 15.859375 21.996094 C 18.765375 20.996094 19 17.701172 19 16.701172 L 19 8 L 16 8 z M 9.9707031 10.550781 C 10.290703 10.550781 10.65 10.609453 11 10.689453 L 11 15.392578 C 10.65 15.472578 10.290703 15.533203 9.9707031 15.533203 C 8.6607031 15.533203 7.390625 15.12 7.390625 13 C 7.390625 10.88 8.6607031 10.550781 9.9707031 10.550781 z"></path>
+  </svg>
+);
+
+const UnityIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="1 -2.5 55 55"
+    className={className}
+    width={size}
+    height={size}
+    fill="currentColor"
+    {...props}
+  >
+    <path d="M 40.449219 3 C 40.359375 2.996094 40.265625 3.007813 40.175781 3.03125 L 23.765625 7.03125 C 23.449219 7.105469 23.191406 7.328125 23.074219 7.628906 L 21.324219 12 L 16 12 C 15.722656 12 15.453125 12.117188 15.265625 12.324219 L 3.265625 25.324219 C 2.894531 25.722656 2.914063 26.347656 3.3125 26.722656 L 15.890625 38.722656 C 16.078125 38.902344 16.324219 39 16.582031 39 L 22.324219 39 L 24.074219 43.371094 C 24.199219 43.695313 24.488281 43.925781 24.828125 43.984375 L 42.289063 46.984375 C 42.816406 47.078125 43.320313 46.734375 43.4375 46.214844 L 46.976563 29.984375 C 47.03125 29.734375 46.988281 29.46875 46.855469 29.25 L 44.527344 25.429688 L 46.902344 20.429688 C 47.015625 20.191406 47.03125 19.917969 46.941406 19.671875 L 41.359375 3.671875 C 41.222656 3.28125 40.859375 3.015625 40.449219 3 Z M 39.769531 5.1875 L 44.921875 19.941406 L 43.445313 23.046875 L 39.953125 11.703125 C 39.824219 11.277344 39.421875 10.988281 38.972656 11 C 38.605469 11.011719 38.269531 11.222656 38.105469 11.550781 L 31.105469 25.550781 C 30.945313 25.871094 30.96875 26.25 31.164063 26.546875 L 39.164063 38.757813 C 39.382813 39.09375 39.785156 39.261719 40.179688 39.191406 C 40.570313 39.121094 40.886719 38.820313 40.972656 38.429688 L 43.453125 27.515625 L 44.9375 29.949219 L 41.6875 44.851563 L 25.71875 42.109375 L 24.601563 39.3125 L 36.183594 41.464844 C 36.578125 41.535156 36.980469 41.367188 37.199219 41.03125 C 37.421875 40.691406 37.421875 40.257813 37.195313 39.921875 L 28.828125 27.441406 C 28.644531 27.167969 28.332031 27 28 27 L 12 27 C 11.585938 27 11.214844 27.253906 11.066406 27.640625 C 10.917969 28.023438 11.023438 28.460938 11.328125 28.738281 L 20.414063 37 L 16.984375 37 L 5.402344 25.953125 L 16.4375 14 L 19.738281 14 L 11.261719 23.328125 C 10.992188 23.621094 10.925781 24.042969 11.085938 24.40625 C 11.246094 24.765625 11.605469 25 12 25 L 28 25 C 28.378906 25 28.726563 24.785156 28.894531 24.449219 L 35.894531 10.449219 C 36.046875 10.140625 36.035156 9.78125 35.859375 9.488281 C 35.683594 9.195313 35.375 9.011719 35.03125 9 C 34.945313 8.996094 34.859375 9.003906 34.777344 9.023438 L 23.640625 11.59375 L 24.734375 8.851563 Z M 33.15625 11.453125 L 27.382813 23 L 14.261719 23 L 22.53125 13.90625 Z M 38.78125 14.679688 L 41.964844 25.039063 L 39.546875 35.691406 L 33.152344 25.933594 Z M 14.585938 29 L 27.46875 29 L 34.210938 39.0625 L 23.464844 37.066406 Z"></path>
+  </svg>
+);
+
+const WebIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
+  <GlobeIcon className={className} size={size} {...props} />
+);
+
+const WindowsIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 48 48"
+    className={className}
+    width={size}
+    height={size}
+    fill="currentColor"
+    {...props}
+  >
+    <path d="M19.852 7.761l-15 2.25C4.362 10.085 4 10.505 4 11v12c0 .553.448 1 1 1h15c.552 0 1-.447 1-1V8.75c0-.291-.127-.567-.348-.758C20.432 7.803 20.139 7.721 19.852 7.761zM45.652 4.242c-.22-.189-.512-.271-.801-.231l-21 3.15C23.362 7.235 23 7.655 23 8.15V23c0 .553.448 1 1 1h21c.552 0 1-.447 1-1V5C46 4.709 45.873 4.433 45.652 4.242zM20 26H5c-.552 0-1 .447-1 1v12c0 .495.362.915.852.989l15 2.25c.05.007.099.011.148.011.238 0 .47-.085.652-.242C20.873 41.817 21 41.541 21 41.25V27C21 26.447 20.552 26 20 26zM45 26H24c-.552 0-1 .447-1 1v14.85c0 .495.362.915.852.989l21 3.15C44.901 45.996 44.951 46 45 46c.238 0 .47-.085.652-.242C45.873 45.567 46 45.291 46 45V27C46 26.447 45.552 26 45 26z"></path>
+  </svg>
+);
+
+const CrossPlatformIcon = ({
+  className,
+  size = 24,
+  ...props
+}: SVGIconProps) => (
+  <MonitorSmartphoneIcon className={className} size={size} {...props} />
+);
+
+const CSSIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 50 50"
+    className={className}
+    width={size}
+    height={size}
+    fill="currentColor"
+    {...props}
+  >
+    <path
+      fill-rule="evenodd"
+      d="M 42 6 L 39 40 L 25 44 L 11 40 L 8 6 Z M 16.800781 28 L 20.800781 28 L 20.898438 30.5 L 25 31.898438 L 29.101563 30.5 L 29.398438 26 L 20.601563 26 L 20.398438 22 L 29.601563 22 L 29.898438 18 L 16.101563 18 L 15.800781 14 L 34.101563 14 L 33.601563 22 L 32.898438 33.5 L 25 36.101563 L 17.101563 33.5 Z"
+    ></path>
+  </svg>
+);
+
+const TailwindCSSIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 48 48"
+    className={className}
+    width={size}
+    height={size}
+    fill="currentColor"
+    {...props}
+  >
+    <path d="M24,9.604c-6.4,0-10.4,3.199-12,9.597c2.4-3.199,5.2-4.398,8.4-3.599 c1.826,0.456,3.131,1.781,4.576,3.247C27.328,21.236,30.051,24,36,24c6.4,0,10.4-3.199,12-9.598c-2.4,3.199-5.2,4.399-8.4,3.6 c-1.825-0.456-3.13-1.781-4.575-3.247C32.672,12.367,29.948,9.604,24,9.604L24,9.604z M12,24c-6.4,0-10.4,3.199-12,9.598 c2.4-3.199,5.2-4.399,8.4-3.599c1.825,0.457,3.13,1.781,4.575,3.246c2.353,2.388,5.077,5.152,11.025,5.152 c6.4,0,10.4-3.199,12-9.598c-2.4,3.199-5.2,4.399-8.4,3.599c-1.826-0.456-3.131-1.781-4.576-3.246C20.672,26.764,17.949,24,12,24 L12,24z"></path>
+  </svg>
+);
+
+const NextjsMonoIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
+  <svg
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 48 48"
+    fill="currentColor"
+    {...props}
+  >
+    <path d="M18.974,31.5c0,0.828-0.671,1.5-1.5,1.5s-1.5-0.672-1.5-1.5v-14c0-0.653,0.423-1.231,1.045-1.43 c0.625-0.198,1.302,0.03,1.679,0.563l16.777,23.704C40.617,36.709,44,30.735,44,24c0-11-9-20-20-20S4,13,4,24s9,20,20,20 c3.192,0,6.206-0.777,8.89-2.122L18.974,22.216V31.5z M28.974,16.5c0-0.828,0.671-1.5,1.5-1.5s1.5,0.672,1.5,1.5v13.84l-3-4.227 V16.5z"></path>
+  </svg>
+);
+
+const MongoDBIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="9 8 30 30"
+    className={className}
+    width={size}
+    height={size}
+    fill="currentColor"
+    {...props}
+  >
+    <path d="M23 28H25V36H23z"></path>
+    <path d="M24,10c0,0-6,5-6,13c0,5.2,3.3,8.5,5,10l1-3l1,3c1.7-1.5,5-4.8,5-10C30,15,24,10,24,10z"></path>
+    <path d="M24,10c0,0-6,5-6,13c0,5.2,3.3,8.5,5,10l1-3V10z"></path>
+  </svg>
+);
+
+const FigmaIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 50 50"
+    className={className}
+    width={size}
+    height={size}
+    fill="currentColor"
+    {...props}
+  >
+    <path d="M25 2v14h-7c-3.855 0-7-3.145-7-7 0-3.855 3.145-7 7-7H25zM25 18v14h-7c-3.855 0-7-3.145-7-7 0-3.855 3.145-7 7-7H25zM25 34v7c0 3.855-3.145 7-7 7s-7-3.145-7-7c0-3.855 3.145-7 7-7H25zM41 9c0 3.855-3.145 7-7 7h-7V2h7C37.855 2 41 5.145 41 9zM34 18A7 7 0 1034 32 7 7 0 1034 18z"></path>
+  </svg>
+);
+
+const ShadcnIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 256 256"
+    className={className}
+    width={size}
+    height={size}
+    fill="currentColor"
+    {...props}
+  >
+    <rect width="256" height="256" fill="none"></rect>
+    <line
+      x1="208"
+      y1="128"
+      x2="128"
+      y2="208"
+      fill="none"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="16"
+    ></line>
+    <line
+      x1="192"
+      y1="40"
+      x2="40"
+      y2="192"
+      fill="none"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="16"
+    ></line>
+  </svg>
+);
+
+const AceternityUIIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
+  <BlocksIcon className={className} size={size} {...props} />
+);
+
+const CSharpIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 50 50"
+    className={className}
+    width={size}
+    height={size}
+    fill="currentColor"
+    {...props}
+  >
+    <path d="M 25 2 C 24.285156 2 23.570313 2.179688 22.933594 2.539063 L 6.089844 12.003906 C 4.800781 12.726563 4 14.082031 4 15.535156 L 4 34.464844 C 4 35.917969 4.800781 37.273438 6.089844 37.996094 L 22.933594 47.460938 C 23.570313 47.820313 24.285156 48 25 48 C 25.714844 48 26.429688 47.820313 27.066406 47.460938 L 43.910156 38 C 45.199219 37.273438 46 35.917969 46 34.464844 L 46 15.535156 C 46 14.082031 45.199219 12.726563 43.910156 12.003906 L 27.066406 2.539063 C 26.429688 2.179688 25.714844 2 25 2 Z M 25 13 C 28.78125 13 32.277344 14.753906 34.542969 17.738281 L 30.160156 20.277344 C 28.84375 18.835938 26.972656 18 25 18 C 21.140625 18 18 21.140625 18 25 C 18 28.859375 21.140625 32 25 32 C 26.972656 32 28.84375 31.164063 30.160156 29.722656 L 34.542969 32.261719 C 32.277344 35.246094 28.78125 37 25 37 C 18.382813 37 13 31.617188 13 25 C 13 18.382813 18.382813 13 25 13 Z M 35 20 L 37 20 L 37 22 L 39 22 L 39 20 L 41 20 L 41 22 L 43 22 L 43 24 L 41 24 L 41 26 L 43 26 L 43 28 L 41 28 L 41 30 L 39 30 L 39 28 L 37 28 L 37 30 L 35 30 L 35 28 L 33 28 L 33 26 L 35 26 L 35 24 L 33 24 L 33 22 L 35 22 Z M 37 24 L 37 26 L 39 26 L 39 24 Z"></path>
+  </svg>
+);
+
+const WinFormsIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
+  <AppWindowIcon className={className} size={size} {...props} />
+);
+
+const SQLiteIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
+  <DatabaseIcon className={className} size={size} {...props} />
+);
+
+const PayloadMonoIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
+  <svg
+    className={className}
+    viewBox="0 0 25 25"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    {...props}
+  >
+    <path d="M11.5293 0L23 6.90096V19.9978L14.3608 25V11.9032L2.88452 5.00777L11.5293 0Z"></path>
+    <path d="M10.6559 24.2727V14.0518L2 19.0651L10.6559 24.2727Z"></path>
+  </svg>
+);
+
+export const MonoIcons = {
+  linkedin: LinkedinIcon,
+  github: GithubIcon,
+  html: HTMLMonoIcon,
+  css: CSSIcon,
+  typescript: TypeScriptMonoIcon,
+  nextjs: NextjsMonoIcon,
+  django: DjangoIcon,
+  unity: UnityIcon,
+  web: WebIcon,
+  windows: WindowsIcon,
+  crossPlatform: CrossPlatformIcon,
+  tailwindcss: TailwindCSSIcon,
+  mongodb: MongoDBIcon,
+  figma: FigmaIcon,
+  shadcn: ShadcnIcon,
+  aceternityui: AceternityUIIcon,
+  csharp: CSharpIcon,
+  winforms: WinFormsIcon,
+  sqlite: SQLiteIcon,
+  payload: PayloadMonoIcon,
+};

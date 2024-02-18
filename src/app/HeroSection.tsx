@@ -1,6 +1,6 @@
 "use client";
 
-import Icons from "@/components/Icons";
+import { MonoIcons } from "@/components/Icons";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import { cn } from "@/lib/utils/cn";
@@ -16,14 +16,12 @@ const HeroSection = () => {
   const [windowHeight, setWindowHeight] = useState(0);
   const { scrollY } = useScrollPosition();
   const range = convertRange(scrollY, [0, windowHeight], [0, 1]);
-  const [loaded, setLoaded] = useState(false);
 
   const [mouseX, setMouseX] = useState(0);
   const [mouseY, setMouseY] = useState(0);
 
   useEffect(() => {
     setWindowHeight(window.innerHeight);
-    setLoaded(true);
 
     const updateMouse = (e: MouseEvent) => {
       setMouseX(e.clientX - window.innerWidth / 2);
@@ -111,9 +109,12 @@ const HeroSection = () => {
             {[
               {
                 href: "https://www.linkedin.com/in/fadi-gorges",
-                icon: Icons.linkedin,
+                icon: MonoIcons.linkedin,
               },
-              { href: "https://github.com/fadi-gorges", icon: Icons.github },
+              {
+                href: "https://github.com/fadi-gorges",
+                icon: MonoIcons.github,
+              },
             ].map((link) => (
               <a key={link.href} href={link.href} target="_blank">
                 <link.icon

@@ -1,4 +1,6 @@
 import ProjectList from "@/app/projects/ProjectList";
+import Main from "@/components/page/Main";
+import Title from "@/components/page/Title";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,9 +10,10 @@ export const metadata: Metadata = {
 
 const ProjectsPage = () => {
   return (
-    <main className="main page-container">
+    <Main>
+      <Title>Projects</Title>
       <ProjectList />
-    </main>
+    </Main>
   );
 };
 

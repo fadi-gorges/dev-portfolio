@@ -84,7 +84,7 @@
     @apply container px-4;
   }
   .main {
-    @apply flex-1 flex flex-col justify-center mt-20 gap-5;
+    @apply flex-1 flex flex-col mt-20 lg:mt-24 xl:mt-28 gap-5;
   }
 }
 @layer utilities {}/*# sourceMappingURL=globals.css.map */

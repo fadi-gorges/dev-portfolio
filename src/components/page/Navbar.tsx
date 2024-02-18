@@ -1,6 +1,6 @@
 "use client";
 
-import Icons from "@/components/Icons";
+import { Icons, SVGIconProps } from "@/components/Icons";
 import Search from "@/components/page/Search";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { ModeToggle } from "@/components/ui/mode-toggle";
@@ -29,7 +29,7 @@ import { AnchorHTMLAttributes, useState } from "react";
 type Link = {
   text?: string;
   link: string;
-  icon: LucideIcon | ((props: any) => JSX.Element);
+  icon: LucideIcon | React.ComponentType<SVGIconProps>;
 };
 
 const links = {
@@ -39,6 +39,8 @@ const links = {
   projects: { text: "Projects", link: "/projects", icon: CodeSquareIcon },
   contact: { text: "Contact", link: "/contact", icon: MailIcon },
 };
+
+const progressEnabledPaths = ["/", "/about"];
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -81,16 +83,18 @@ const Navbar = () => {
           scrollY !== 0 && "bg-background/85 backdrop-blur-md border"
         )}
       >
-        <div
-          className="absolute left-0 bottom-0 h-0.5 bg-primary/80"
-          style={{ width: `${scrollYProgress * 100}%` }}
-        />
+        {progressEnabledPaths.includes(pathname) && (
+          <div
+            className="absolute left-0 bottom-0 h-0.5 bg-primary/80 transition-[width] ease-out duration-300"
+            style={{ width: `${scrollYProgress * 100}%` }}
+          />
+        )}
         <NavLink link={links.logo} className="inline-flex" />
         <NavLink link={links.home} />
-        <Search className="ml-auto" />
         <NavLink link={links.about} />
         <NavLink link={links.projects} />
         <NavLink link={links.contact} />
+        <Search className="ml-auto" />
         <ModeToggle />
         {navDrawer}
       </div>

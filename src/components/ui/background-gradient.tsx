@@ -1,4 +1,5 @@
 "use client";
+import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils/cn";
 import { motion } from "framer-motion";
 import React, { HTMLAttributes } from "react";
@@ -28,8 +29,11 @@ export const BackgroundGradient = ({
     },
   };
   return (
-    <div
-      className={cn("relative p-[1px] group", containerClassName)}
+    <Card
+      className={cn(
+        "relative p-[1px] group rounded-3xl border-0",
+        containerClassName
+      )}
       {...props}
     >
       <motion.div
@@ -78,6 +82,6 @@ export const BackgroundGradient = ({
       />
 
       <div className={cn("relative z-10", className)}>{children}</div>
-    </div>
+    </Card>
   );
 };

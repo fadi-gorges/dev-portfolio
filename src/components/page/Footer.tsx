@@ -1,4 +1,4 @@
-import Icons from "@/components/Icons";
+import { Icons, MonoIcons } from "@/components/Icons";
 
 const Footer = () => {
   return (
@@ -12,9 +12,9 @@ const Footer = () => {
         {[
           {
             href: "https://www.linkedin.com/in/fadi-gorges",
-            icon: Icons.linkedin,
+            icon: MonoIcons.linkedin,
           },
-          { href: "https://github.com/fadi-gorges", icon: Icons.github },
+          { href: "https://github.com/fadi-gorges", icon: MonoIcons.github },
         ].map((link) => (
           <a key={link.href} href={link.href} target="_blank">
             <link.icon

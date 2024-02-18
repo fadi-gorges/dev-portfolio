@@ -1,4 +1,7 @@
 import ContactForm from "@/app/contact/ContactForm";
+import Main from "@/components/page/Main";
+import Title from "@/components/page/Title";
+import { Separator } from "@/components/ui/separator";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,8 +11,8 @@ export const metadata: Metadata = {
 
 const ContactPage = () => {
   return (
-    <main className="main page-container">
-      <h2 className="font-bold">Contact me</h2>
+    <Main>
+      <Title>Contact</Title>
       <div>
         <h5>Feel free to send me an email at:</h5>
         <h5>
@@ -23,7 +26,7 @@ const ContactPage = () => {
       </div>
       <h5>Or, you can contact me through the form below:</h5>
       <ContactForm />
-    </main>
+    </Main>
   );
 };
 
