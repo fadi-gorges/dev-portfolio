@@ -9,17 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
+    "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-toggle": "^1.0.3",
     "@types/nodemailer": "^6.4.14",
     "@vercel/speed-insights": "^1.0.9",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "cmdk": "^0.2.1",
+    "contentlayer": "^0.3.4",
+    "date-fns": "^3.3.1",
     "framer-motion": "^11.0.3",
     "lucide-react": "^0.323.0",
     "mini-svg-data-uri": "^1.4.4",
     "next": "14.1.0",
+    "next-contentlayer": "^0.3.4",
     "next-themes": "^0.2.1",
     "nodemailer": "^6.9.9",
     "react": "^18",
@@ -29,7 +36,8 @@
     "react-unity-webgl": "^9.5.0",
     "sonner": "^1.4.0",
     "tailwind-merge": "^2.2.1",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -42,5 +50,10 @@
     "tailwindcss": "^3.3.0",
     "tailwindcss-3d": "^1.0.5",
     "typescript": "^5"
+  },
+  "overrides": {
+    "next-contentlayer": {
+      "next": "$next"
+    }
   }
 }

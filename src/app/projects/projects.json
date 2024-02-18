@@ -1,0 +1,45 @@
+[
+  {
+    "title": "CitizenshipAU",
+    "description": "CitizenshipAU is a website that helps people prepare for the Australian Citizenship Test. The front-end is built in NextJS, TypeScript and styled with TailwindCSS. Shadcn/ui and AceternityUI are used for high quality, customisable UI components. For the back-end, PayloadCMS and MongoDB Atlas are utilised to application functionality, data storage and user authentication. The website is hosted on Vercel.",
+    "mockup": "/citizenshipau-mockup.png",
+    "slug": "citizenshipau",
+    "link": "https://www.citizenshipau.com",
+    "platform": "web",
+    "framework": "nextjs",
+    "languages": ["html", "css", "typescript"],
+    "tools": ["tailwindcss", "payloadcms", "mongodb", "vercel"]
+  },
+  {
+    "title": "Dungeon of Death",
+    "description": "Dungeon of Death is a 2D fantasy dungeon crawler game built in Unity, in which the player explores unique dungeons, fights monsters, and collects loot. This game was submitted as my Major Project for my HSC Industrial Technology Multimedia course, in which I received an assessment mark of 95/100 (Band 6).",
+    "mockup": "/dungeonofdeath-mockup.png",
+    "slug": "dungeon-of-death",
+    "platform": "cross-platform",
+    "framework": "unity",
+    "languages": ["csharp"]
+  },
+  {
+    "title": "BabylonFadez",
+    "description": "BabylonFadez is an aesthetic, modern and responsive landing page website showcasing a local barber shop in Sydney, Australia. The site's layout was designed in Figma, and the front-end was built in NextJS, TypeScript and styled with TailwindCSS.",
+    "mockup": "/babylonfadez-mockup.png",
+    "slug": "babylonfadez",
+    "link": "https://babylonfadez.vercel.app/",
+    "github": "https://github.com/fadi-gorges/BabylonFadez",
+    "platform": "web",
+    "framework": "nextjs",
+    "languages": ["html", "css", "typescript"],
+    "tools": ["tailwindcss", "figma", "vercel"]
+  },
+  {
+    "title": "Dev Portfolio",
+    "description": "A modern software developer portfolio that designed to be responsive and accessible, showcasing my projects, skills and contact information. It is built in NextJS, TypeScript, Shadcn/ui, AceternityUI and styled with TailwindCSS. The website is hosted on Vercel. ",
+    "mockup": "/portfolio-mockup.png",
+    "slug": "portfolio",
+    "github": "https://github.com/fadi-gorges/dev-portfolio",
+    "platform": "web",
+    "framework": "nextjs",
+    "languages": ["html", "css", "typescript"],
+    "tools": ["tailwindcss", "vercel"]
+  }
+]

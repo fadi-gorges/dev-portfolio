@@ -1,6 +1,7 @@
 "use client";
 
 import Icons from "@/components/Icons";
+import Search from "@/components/page/Search";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 import {
@@ -76,21 +77,21 @@ const Navbar = () => {
     <nav className="fixed w-full z-40">
       <div
         className={cn(
-          "relative page-container mt-0.5 lg:mt-1 px-4 lg:px-10 py-2 lg:py-4 flex gap-2 items-center rounded-full border-foreground/5 overflow-hidden transition",
+          "relative page-container mt-0.5 lg:mt-1 px-4 py-2 lg:py-4 flex gap-2 items-center rounded-full border-foreground/5 overflow-hidden transition-[background-color,backdrop-filter]",
           scrollY !== 0 && "bg-background/85 backdrop-blur-md border"
         )}
-        style={{ transitionProperty: "background-color, backdrop-filter" }}
       >
         <div
           className="absolute left-0 bottom-0 h-0.5 bg-primary/80"
           style={{ width: `${scrollYProgress * 100}%` }}
         />
-        <NavLink link={links.logo} className="flex" />
+        <NavLink link={links.logo} className="inline-flex" />
         <NavLink link={links.home} />
-        <NavLink link={links.about} className="ml-auto" />
+        <Search className="ml-auto" />
+        <NavLink link={links.about} />
         <NavLink link={links.projects} />
         <NavLink link={links.contact} />
-        <ModeToggle className="ml-auto lg:ml-0" />
+        <ModeToggle />
         {navDrawer}
       </div>
     </nav>
@@ -121,7 +122,7 @@ const NavLink = ({
           "flex justify-start items-center gap-4",
           isActive
             ? "text-primary dark:text-foreground font-bold"
-            : "text-foreground/60",
+            : "text-muted-foreground",
           className
         )}
         {...props}
@@ -133,16 +134,16 @@ const NavLink = ({
   ) : (
     <Link
       href={link.link}
-      className={cn(
-        buttonVariants({
-          variant: "ghost",
-          size: link.text ? "default" : "icon",
-        }),
-        "hidden lg:inline-flex",
-        link.text && "px-3",
-        isActive ? "font-semibold" : "text-foreground/60",
-        className
-      )}
+      className={buttonVariants({
+        variant: "ghost",
+        size: link.text ? "sm" : "icon",
+        className: cn(
+          "hidden lg:inline-flex",
+          link.text && "px-3",
+          isActive ? "font-semibold" : "text-muted-foreground",
+          className
+        ),
+      })}
       {...props}
     >
       {link.text ? <p>{link.text}</p> : <link.icon size={30} />}

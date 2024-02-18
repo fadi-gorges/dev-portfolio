@@ -55,17 +55,13 @@ const SkillsSection = () => {
         id="skills-section"
         className="page-container flex flex-col gap-5 lg:gap-10"
       >
-        <h3 className="in-view text-primary font-bold [&:not(.show)]:opacity-0 transition-opacity delay-200 duration-300">
+        <h3 className="in-view text-primary font-bold [&:not(.show)]:opacity-0 transition-opacity delay-100 duration-300">
           MY SKILLS
         </h3>
         <HoverEffect items={skills} className="scale-105 lg:scale-100" />
         <h4
-          className="in-view text-end [&:not(.show)]:opacity-0 [&:not(.show)]:translate-y-5"
-          style={{
-            transitionProperty: "translate, opacity",
-            transitionDuration: "0.3s",
-            transitionDelay: "1.5s",
-          }}
+          className="in-view text-end transition-[translate,opacity] duration-300 [&:not(.show)]:opacity-0 [&:not(.show)]:translate-y-5"
+          style={{ transitionDelay: "1s" }}
         >
           and more...
         </h4>
@@ -96,11 +92,8 @@ const HoverEffect = ({
           key={item.title}
           href={item?.link}
           target="_blank"
-          className="in-view relative group block w-full p-1 text-foreground [&:not(.show)]:opacity-0 [&:not(.show)]:-translate-x-10 transition duration-500"
-          style={{
-            transitionProperty: "opacity, translate",
-            transitionDelay: `${0.5 + idx * 0.1}s`,
-          }}
+          className="in-view relative group block w-full p-1 text-foreground [&:not(.show)]:opacity-0 [&:not(.show)]:-translate-x-10 transition-[translate,opacity] duration-500"
+          style={{ transitionDelay: `${0.15 + idx * 0.075}s` }}
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
@@ -136,7 +129,7 @@ const Card = ({ item }: { item: HoverCardItem }) => {
           size={50}
           className="lg:w-16 lg:h-16 bg-background dark:bg-foreground rounded-full p-1"
         />
-        <small className="lg:text-lg">{item.title}</small>
+        <p>{item.title}</p>
       </div>
     </div>
   );

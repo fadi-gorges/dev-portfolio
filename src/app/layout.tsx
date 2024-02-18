@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | FadiGorges.DEV",
+    template: "%s | FadiGorges.dev",
     default: "Fadi Gorges | Software Developer Portfolio",
   },
   // TODO: Add description
@@ -41,7 +41,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Navbar />
           <Utils>
-            <div className="flex flex-col min-h-screen gap-10">
+            <div className="flex flex-col justify-between min-h-screen gap-10">
               {children}
               <Footer />
             </div>

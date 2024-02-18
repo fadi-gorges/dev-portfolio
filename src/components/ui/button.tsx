@@ -2,6 +2,7 @@ import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
 
+import Spinner from "@/components/Spinner";
 import { cn } from "@/lib/utils/cn";
 
 const buttonVariants = cva(
@@ -19,7 +20,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         gradient:
-          "overflow-hidden relative bg-gradient-to-br from-primary to-teal-500 text-primary-foreground after:absolute after:inset-0 after:w-full after:h-full after:opacity-0 after:bg-gradient-to-br after:from-teal-500 after:to-primary after:transition-opacity after:duration-300 hover:after:opacity-100",
+          "overflow-hidden relative bg-gradient-to-br from-primary to-teal-500 text-primary-foreground [&>*]:z-10 after:absolute after:inset-0 after:w-full after:h-full after:opacity-0 after:bg-gradient-to-br after:from-teal-500 after:to-primary after:transition-opacity after:duration-300 hover:after:opacity-100",
       },
       size: {
         default: "h-10 px-4 py-2",
@@ -39,17 +40,37 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
+  loading?: boolean;
+  spinnerSize?: number;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  (
+    {
+      className,
+      variant,
+      size,
+      asChild = false,
+      loading,
+      spinnerSize = 16,
+      children,
+      ...props
+    },
+    ref
+  ) => {
     const Comp = asChild ? Slot : "button";
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={cn(
+          buttonVariants({ variant, size, className: cn("gap-3", className) })
+        )}
         ref={ref}
+        disabled={loading}
         {...props}
-      />
+      >
+        {loading && <Spinner size={spinnerSize} />}
+        {children}
+      </Comp>
     );
   }
 );

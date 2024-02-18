@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 import { isDesktop } from "react-device-detect";
 
 const HeroSection = () => {
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+  const [windowHeight, setWindowHeight] = useState(0);
   const { scrollY } = useScrollPosition();
   const range = convertRange(scrollY, [0, windowHeight], [0, 1]);
   const [loaded, setLoaded] = useState(false);
@@ -22,6 +22,7 @@ const HeroSection = () => {
   const [mouseY, setMouseY] = useState(0);
 
   useEffect(() => {
+    setWindowHeight(window.innerHeight);
     setLoaded(true);
 
     const updateMouse = (e: MouseEvent) => {
@@ -46,10 +47,8 @@ const HeroSection = () => {
       />
       <div
         className={cn(
-          "page-container h-full grid grid-cols-12 gap-y-10 transition duration-500 perspective-1000",
-          loaded ? "" : "-translate-y-5 opacity-0"
+          "page-container h-full grid grid-cols-12 gap-y-10 transition-[translate,opacity] animate-in fade-in-0 slide-in-from-top-5 duration-500 perspective-1000"
         )}
-        style={{ transitionProperty: "translate, opacity" }}
       >
         <div
           className="col-span-12 lg:col-span-4 lg:col-start-9 flex flex-col justify-end items-center lg:justify-center lg:items-start"
@@ -86,7 +85,7 @@ const HeroSection = () => {
                   transform: `translateX(${-mouseX * 0.005}px) translateY(${
                     -mouseY * 0.05
                   }px) rotateX(${-mouseY * 0.01}deg) rotateY(${
-                    mouseX * 0.01
+                    mouseX * 0.005
                   }deg)`,
                   transition:
                     "transform 1s cubic-bezier(0.2, 0.49, 0.32, 0.99)",
@@ -119,23 +118,21 @@ const HeroSection = () => {
               <a key={link.href} href={link.href} target="_blank">
                 <link.icon
                   size={30}
-                  className="transition hover:text-primary hover:drop-shadow-[0_3px_.8px_rgba(0,0,0,0.25)] dark:hover:drop-shadow-[0_3px_.8px_rgba(255,255,255,0.15)] active:scale-90"
-                  style={{
-                    transitionProperty: "color, filter, scale",
-                  }}
+                  className="transition-[color,filter,scale] hover:text-primary hover:drop-shadow-[0_3px_.8px_rgba(0,0,0,0.25)] dark:hover:drop-shadow-[0_3px_.8px_rgba(255,255,255,0.15)] active:scale-90"
                 />
               </a>
             ))}
             <Button
-              className={cn(buttonVariants({ variant: "gradient" }), "group")}
+              className={buttonVariants({
+                variant: "gradient",
+                className: "group",
+              })}
               onClick={() => scrollIntoView("skills-section", -150)}
             >
-              <div className="flex gap-3 z-10">
-                More about me
-                <div className="relative group-hover:-translate-y-1 transition-transform">
-                  <ChevronDownIcon />
-                  <ChevronDownIcon className="absolute left-0 top-1.5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
+              <p>More about me</p>
+              <div className="relative group-hover:-translate-y-1 transition-transform">
+                <ChevronDownIcon />
+                <ChevronDownIcon className="absolute left-0 top-1.5 opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
             </Button>
           </div>
