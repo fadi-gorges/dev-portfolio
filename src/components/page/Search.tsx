@@ -2,7 +2,9 @@
 
 import * as React from "react";
 
+import { frameworks } from "@/app/projects/ProjectList";
 import projects from "@/app/projects/projects.json";
+import { navLinks } from "@/components/page/Navbar";
 import { Button } from "@/components/ui/button";
 import {
   CommandDialog,
@@ -13,7 +15,8 @@ import {
   CommandList,
 } from "@/components/ui/command";
 import { cn } from "@/lib/utils/cn";
-import { CodeSquareIcon, SearchIcon } from "lucide-react";
+import { CommandSeparator } from "cmdk";
+import { SearchIcon } from "lucide-react";
 import Link from "next/link";
 
 type SearchProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
@@ -54,16 +57,40 @@ const Search = ({ className }: SearchProps) => {
         <CommandInput placeholder="Search Portfolio..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Projects">
-            {projects.map((project) => (
-              <Link key={project.slug} href={`/projects/${project.slug}`}>
-                <CommandItem>
-                  <CodeSquareIcon className="mr-2 h-4 w-4" />
-                  <span>{project.title}</span>
-                </CommandItem>
-              </Link>
-            ))}
+          <CommandGroup heading="Pages">
+            {[navLinks.about, navLinks.projects, navLinks.contact].map(
+              (link) => (
+                <Link
+                  key={link.link}
+                  href={link.link}
+                  onClick={() => setOpen(false)}
+                >
+                  <CommandItem>
+                    <link.icon className="mr-2 h-4 w-4" />
+                    <span>{link.text}</span>
+                  </CommandItem>
+                </Link>
+              )
+            )}
           </CommandGroup>
+          <CommandGroup heading="Projects">
+            {projects.map((project) => {
+              const Icon = frameworks[project.framework];
+              return (
+                <Link
+                  key={project.slug}
+                  href={`/projects/${project.slug}`}
+                  onClick={() => setOpen(false)}
+                >
+                  <CommandItem>
+                    <Icon className="mr-2 h-4 w-4" />
+                    <span>{project.title}</span>
+                  </CommandItem>
+                </Link>
+              );
+            })}
+          </CommandGroup>
+          <CommandSeparator />
         </CommandList>
       </CommandDialog>
     </>

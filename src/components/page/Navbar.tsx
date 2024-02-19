@@ -32,7 +32,7 @@ type Link = {
   icon: LucideIcon | React.ComponentType<SVGIconProps>;
 };
 
-const links = {
+export const navLinks = {
   logo: { link: "/", icon: Icons.iconSvg },
   home: { text: "Home", link: "/", icon: HomeIcon },
   about: { text: "About Me", link: "/about", icon: CircleUserIcon },
@@ -66,10 +66,10 @@ const Navbar = () => {
         </SheetHeader>
         <div className="flex flex-col mt-8 gap-4">
           <SheetClose asChild></SheetClose>
-          <NavLink link={links.home} drawerLink />
-          <NavLink link={links.about} drawerLink />
-          <NavLink link={links.projects} drawerLink />
-          <NavLink link={links.contact} drawerLink />
+          <NavLink link={navLinks.home} drawerLink />
+          <NavLink link={navLinks.about} drawerLink />
+          <NavLink link={navLinks.projects} drawerLink />
+          <NavLink link={navLinks.contact} drawerLink />
         </div>
       </SheetContent>
     </Sheet>
@@ -85,15 +85,15 @@ const Navbar = () => {
       >
         {progressEnabledPaths.includes(pathname) && (
           <div
-            className="absolute left-0 bottom-0 h-0.5 bg-primary/80 transition-[width] ease-out duration-300"
+            className="absolute left-0 bottom-0 h-0.5 bg-primary/80"
             style={{ width: `${scrollYProgress * 100}%` }}
           />
         )}
-        <NavLink link={links.logo} className="inline-flex" />
-        <NavLink link={links.home} />
-        <NavLink link={links.about} />
-        <NavLink link={links.projects} />
-        <NavLink link={links.contact} />
+        <NavLink link={navLinks.logo} className="inline-flex" />
+        <NavLink link={navLinks.home} />
+        <NavLink link={navLinks.about} />
+        <NavLink link={navLinks.projects} />
+        <NavLink link={navLinks.contact} />
         <Search className="ml-auto" />
         <ModeToggle />
         {navDrawer}

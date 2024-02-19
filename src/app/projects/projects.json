@@ -1,7 +1,8 @@
 [
   {
     "title": "CitizenshipAU",
-    "description": "CitizenshipAU is a website that helps people prepare for the Australian Citizenship Test. The front-end is built in NextJS, TypeScript and styled with TailwindCSS. Shadcn/ui is used for high quality, customisable UI components. For the back-end, PayloadCMS and MongoDB Atlas are utilised to application functionality, data storage and user authentication. The website is hosted on Vercel.",
+    "short_description": "Website that helps people prepare for the Australian Citizenship Test.",
+    "description": "CitizenshipAU is a website that helps people prepare for the Australian Citizenship Test. The front-end is built in NextJS, TypeScript and styled with TailwindCSS. For the back-end, PayloadCMS and MongoDB Atlas are utilised to handle the database and authentication.",
     "mockup": "/citizenshipau-mockup.png",
     "slug": "citizenshipau",
     "link": "https://www.citizenshipau.com",
@@ -12,7 +13,8 @@
   },
   {
     "title": "Dungeon of Death",
-    "description": "Dungeon of Death is a 2D fantasy dungeon crawler game built in Unity, in which the player explores unique dungeons, fights monsters, and collects loot. This game was submitted as my Major Project for my HSC Industrial Technology Multimedia course, in which I received an assessment mark of 95/100 (Band 6).",
+    "short_description": "2D fantasy dungeon crawler game featuring dungeons, monsters, and loot.",
+    "description": "Dungeon of Death is a 2D fantasy dungeon crawler game built in Unity, in which the player explores unique dungeons, fights monsters, and collects loot. This game received an assessment mark of 95/100 (Band 6) as my Industrial Technology Multimedia HSC Major Project.",
     "mockup": "/dungeonofdeath-mockup.png",
     "slug": "dungeon-of-death",
     "platform": "Cross Platform",
@@ -21,6 +23,7 @@
   },
   {
     "title": "BabylonFadez",
+    "short_description": "Aesthetic, modern and responsive landing page website.",
     "description": "BabylonFadez is an aesthetic, modern and responsive landing page website showcasing a local barber shop in Sydney, Australia. The site's layout was designed in Figma, and the front-end was built in NextJS, TypeScript and styled with TailwindCSS.",
     "mockup": "/babylonfadez-mockup.png",
     "slug": "babylonfadez",
@@ -32,43 +35,8 @@
     "tools": ["TailwindCSS", "Figma"]
   },
   {
-    "title": "BabylonFadez",
-    "description": "BabylonFadez is an aesthetic, modern and responsive landing page website showcasing a local barber shop in Sydney, Australia. The site's layout was designed in Figma, and the front-end was built in NextJS, TypeScript and styled with TailwindCSS.",
-    "mockup": "/babylonfadez-mockup.png",
-    "slug": "babylonfadezc",
-    "link": "https://babylonfadez.vercel.app/",
-    "github": "https://github.com/fadi-gorges/BabylonFadez",
-    "platform": "Web",
-    "framework": "Next.js",
-    "languages": ["HTML", "CSS", "TypeScript"],
-    "tools": ["TailwindCSS", "Figma"]
-  },
-  {
-    "title": "BabylonFadez",
-    "description": "BabylonFadez is an aesthetic, modern and responsive landing page website showcasing a local barber shop in Sydney, Australia. The site's layout was designed in Figma, and the front-end was built in NextJS, TypeScript and styled with TailwindCSS.",
-    "mockup": "/babylonfadez-mockup.png",
-    "slug": "babylonfadezb",
-    "link": "https://babylonfadez.vercel.app/",
-    "github": "https://github.com/fadi-gorges/BabylonFadez",
-    "platform": "Web",
-    "framework": "Next.js",
-    "languages": ["HTML", "CSS", "TypeScript"],
-    "tools": ["TailwindCSS", "Figma"]
-  },
-  {
-    "title": "BabylonFadez",
-    "description": "BabylonFadez is an aesthetic, modern and responsive landing page website showcasing a local barber shop in Sydney, Australia. The site's layout was designed in Figma, and the front-end was built in NextJS, TypeScript and styled with TailwindCSS.",
-    "mockup": "/babylonfadez-mockup.png",
-    "slug": "babylonfadeza",
-    "link": "https://babylonfadez.vercel.app/",
-    "github": "https://github.com/fadi-gorges/BabylonFadez",
-    "platform": "Web",
-    "framework": "Next.js",
-    "languages": ["HTML", "CSS", "TypeScript"],
-    "tools": ["TailwindCSS", "Figma"]
-  },
-  {
     "title": "Dev Portfolio",
+    "short_description": "A modern software developer portfolio, showcasing my projects and skills.",
     "description": "A modern software developer portfolio that designed to be responsive and accessible, showcasing my projects, skills and contact information. It is built in NextJS, TypeScript, Shadcn/ui, AceternityUI and styled with TailwindCSS. The website is hosted on Vercel. ",
     "mockup": "/babylonfadez-mockup.png",
     "slug": "portfolio",

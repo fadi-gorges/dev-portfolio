@@ -33,6 +33,8 @@ export const FollowerPointerCard = ({
       }
     };
 
+    handleResize();
+
     ["resize", "scroll"].forEach((e) =>
       window.addEventListener(e, handleResize)
     );

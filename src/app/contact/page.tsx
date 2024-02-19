@@ -1,7 +1,6 @@
 import ContactForm from "@/app/contact/ContactForm";
 import Main from "@/components/page/Main";
-import Title from "@/components/page/Title";
-import { Separator } from "@/components/ui/separator";
+import { Title, TitleSeparator } from "@/components/page/Title";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,6 +12,7 @@ const ContactPage = () => {
   return (
     <Main>
       <Title>Contact</Title>
+      <TitleSeparator />
       <div>
         <h5>Feel free to send me an email at:</h5>
         <h5>

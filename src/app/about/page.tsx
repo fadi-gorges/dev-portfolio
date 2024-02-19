@@ -1,5 +1,5 @@
 import Main from "@/components/page/Main";
-import Title from "@/components/page/Title";
+import { Title, TitleSeparator } from "@/components/page/Title";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,6 +11,7 @@ const AboutPage = () => {
   return (
     <Main>
       <Title>About Me</Title>
+      <TitleSeparator />
     </Main>
   );
 };

@@ -51,12 +51,12 @@ const skills: HoverCardItem[] = [
 
 const SkillsSection = () => {
   return (
-    <div className="in-view py-14 bg-gradient-to-br from-primary/10 to-teal-500/20 [&:not(.show)]:opacity-0 transition-opacity duration-200">
+    <div className="py-14 bg-gradient-to-br from-primary/10 to-teal-500/20">
       <div
         id="skills-section"
         className="page-container flex flex-col gap-5 lg:gap-10"
       >
-        <h3 className="in-view text-primary font-bold [&:not(.show)]:opacity-0 transition-opacity delay-100 duration-300">
+        <h3 className="in-view text-primary font-bold [&:not(.show)]:opacity-0 transition-opacity duration-300">
           MY SKILLS
         </h3>
         <HoverEffect items={skills} className="scale-105 lg:scale-100" />

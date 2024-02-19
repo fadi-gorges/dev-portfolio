@@ -22,7 +22,7 @@ const ProjectsSection = () => {
           key={project.slug}
           className="in-view transition-[translate,opacity] duration-500 [&:not(.show)]:-translate-x-10 [&:not(.show)]:opacity-0"
         >
-          <BackgroundGradient className="group grid grid-cols-12 gap-y-8 rounded-[22px] p-10 bg-background/90">
+          <BackgroundGradient className="group grid grid-cols-12 gap-y-8 rounded-[22px] p-10 bg-background/90 hover:shadow-lg transition-shadow duration-300">
             <div className="col-span-12 lg:col-span-5">
               <Image
                 src={project.mockup}
