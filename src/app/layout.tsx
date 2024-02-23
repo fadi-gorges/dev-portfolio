@@ -37,8 +37,8 @@ export default function RootLayout({
         {/* TODO: Add Google Analytics */}
         {/* <GoogleAnalytics /> */}
       </head>
-      <body className={cn("relative antialiased", inter.className)}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+      <body className={cn("antialiased", inter.className)}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
           <Utils>
             <div className="flex flex-col justify-between min-h-screen gap-10">

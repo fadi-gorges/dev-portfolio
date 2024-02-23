@@ -25,7 +25,7 @@ const ProjectsSection = () => {
           <BackgroundGradient className="group grid grid-cols-12 gap-y-8 rounded-[22px] p-10 bg-background/90 hover:shadow-lg transition-shadow duration-300">
             <div className="col-span-12 lg:col-span-5">
               <Image
-                src={project.mockup}
+                src={`/${project.slug}/mockup.png`}
                 alt={`${project.title} Mockup`}
                 width={750}
                 height={750}

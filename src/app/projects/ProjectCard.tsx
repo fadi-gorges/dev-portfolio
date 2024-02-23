@@ -25,10 +25,10 @@ const ProjectCard = ({ project }: { project: Project }) => {
       href={`/projects/${project.slug}`}
       className="col-span-6 xl:col-span-4"
     >
-      <Card className="min-h-[325px] lg:min-h-[425px] flex flex-col hover:shadow-md hover:bg-primary/5 transition duration-300">
+      <Card className="min-h-[325px] md:min-h-[425px] flex flex-col hover:shadow-md hover:bg-primary/5 transition duration-300">
         <CardHeader className="px-4 lg:px-6">
           <Image
-            src={project.mockup}
+            src={`/${project.slug}/mockup.png`}
             alt={`${project.title} Image`}
             width={500}
             height={500}

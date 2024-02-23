@@ -18,7 +18,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { FilterIcon, SearchIcon } from "lucide-react";
+import { FilterIcon, SearchIcon, Undo2Icon } from "lucide-react";
 import { useEffect, useState } from "react";
 
 type Filters = {
@@ -150,7 +150,10 @@ const ProjectList = () => {
             <ScrollArea className="flex-1">{filters}</ScrollArea>
             <SheetFooter>
               <SheetClose asChild>
-                <Button variant="secondary">Close</Button>
+                <Button variant="secondary">
+                  <Undo2Icon size={20} />
+                  <h6>Return</h6>
+                </Button>
               </SheetClose>
             </SheetFooter>
           </SheetContent>
