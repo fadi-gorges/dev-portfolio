@@ -385,9 +385,9 @@ const ShadcnIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
       y2="208"
       fill="none"
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="16"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16"
     ></line>
     <line
       x1="192"
@@ -396,9 +396,9 @@ const ShadcnIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
       y2="192"
       fill="none"
       stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="16"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="16"
     ></line>
   </svg>
 );
@@ -465,4 +465,37 @@ export const MonoIcons = {
   winforms: WinFormsIcon,
   sqlite: SQLiteIcon,
   payload: PayloadMonoIcon,
+};
+
+export type Filters = {
+  [key: string]: React.ComponentType<SVGIconProps>;
+};
+
+export const platforms: Filters = {
+  Web: MonoIcons.web,
+  Windows: MonoIcons.windows,
+  "Cross Platform": MonoIcons.crossPlatform,
+};
+
+export const frameworks: Filters = {
+  "Next.js": MonoIcons.nextjs,
+  Unity: MonoIcons.unity,
+  WinForms: MonoIcons.winforms,
+};
+
+export const languages: Filters = {
+  HTML: MonoIcons.html,
+  CSS: MonoIcons.css,
+  TypeScript: MonoIcons.typescript,
+  "C#": MonoIcons.csharp,
+};
+
+export const tools: Filters = {
+  Figma: MonoIcons.figma,
+  TailwindCSS: MonoIcons.tailwindcss,
+  "Shadcn/ui": MonoIcons.shadcn,
+  AceternityUI: MonoIcons.aceternityui,
+  PayloadCMS: MonoIcons.payload,
+  MongoDB: MonoIcons.mongodb,
+  SQLite: MonoIcons.sqlite,
 };

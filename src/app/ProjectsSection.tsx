@@ -1,5 +1,3 @@
-"use client";
-
 import projects from "@/app/projects/projects.json";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
 import BorderButton from "@/components/ui/border-button";
@@ -17,7 +15,7 @@ const ProjectsSection = () => {
           MY PROJECTS
         </h3>
       </div>
-      {projects.slice(0, 3).map((project, idx) => (
+      {projects.slice(0, 3).map((project) => (
         <div
           key={project.slug}
           className="in-view transition-[translate,opacity] duration-500 [&:not(.show)]:-translate-x-10 [&:not(.show)]:opacity-0"

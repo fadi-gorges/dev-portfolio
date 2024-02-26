@@ -59,9 +59,11 @@ const Navbar = () => {
       <SheetContent>
         <SheetHeader className="my-4">
           <SheetTitle asChild>
-            <Link href="/" className="text-center">
-              <h5 className="font-bold">FADIGORGES.DEV</h5>
-            </Link>
+            <SheetClose asChild>
+              <Link href="/" className="text-center">
+                <h5 className="font-bold">FADIGORGES.DEV</h5>
+              </Link>
+            </SheetClose>
           </SheetTitle>
         </SheetHeader>
         <div className="flex flex-col mt-8 gap-4">

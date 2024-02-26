@@ -112,6 +112,9 @@ const config = {
       );
     },
   ],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
 } satisfies Config;
 
 function addVariablesForColors({ addBase, theme }: any) {

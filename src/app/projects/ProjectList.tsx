@@ -3,7 +3,7 @@
 import FilterSection from "@/app/projects/FilterSection";
 import ProjectCard from "@/app/projects/ProjectCard";
 import projects from "@/app/projects/projects.json";
-import { MonoIcons, SVGIconProps } from "@/components/Icons";
+import { frameworks, languages, platforms, tools } from "@/components/Icons";
 import { Title, TitleSeparator } from "@/components/page/Title";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -19,42 +19,10 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { FilterIcon, SearchIcon, Undo2Icon } from "lucide-react";
-import { useEffect, useState } from "react";
-
-type Filters = {
-  [key: string]: React.ComponentType<SVGIconProps>;
-};
-
-export const platforms: Filters = {
-  Web: MonoIcons.web,
-  Windows: MonoIcons.windows,
-  "Cross Platform": MonoIcons.crossPlatform,
-};
-
-export const frameworks: Filters = {
-  "Next.js": MonoIcons.nextjs,
-  Unity: MonoIcons.unity,
-  WinForms: MonoIcons.winforms,
-};
-
-export const languages: Filters = {
-  HTML: MonoIcons.html,
-  CSS: MonoIcons.css,
-  TypeScript: MonoIcons.typescript,
-  "C#": MonoIcons.csharp,
-};
-
-export const tools: Filters = {
-  Figma: MonoIcons.figma,
-  TailwindCSS: MonoIcons.tailwindcss,
-  "Shadcn/ui": MonoIcons.shadcn,
-  AceternityUI: MonoIcons.aceternityui,
-  PayloadCMS: MonoIcons.payload,
-  MongoDB: MonoIcons.mongodb,
-  SQLite: MonoIcons.sqlite,
-};
+import { useEffect, useRef, useState } from "react";
 
 const ProjectList = () => {
+  const searchRef = useRef<HTMLInputElement>(null);
   const [search, setSearch] = useState("");
   const [selectedPlatforms, setSelectedPlatforms] = useState<string[]>([]);
   const [selectedFrameworks, setSelectedFrameworks] = useState<string[]>([]);
@@ -86,13 +54,14 @@ const ProjectList = () => {
   ]);
 
   const filters = (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-5 p-1">
       <div className="relative">
         <SearchIcon
           size={20}
           className="absolute left-2.5 top-1/2 -translate-y-1/2 text-muted-foreground"
         />
         <Input
+          ref={searchRef}
           className="pl-9"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -135,7 +104,11 @@ const ProjectList = () => {
         <Title>Projects</Title>
         <Sheet>
           <SheetTrigger asChild>
-            <Button variant="secondary" className="md:hidden">
+            <Button
+              variant="secondary"
+              className="md:hidden"
+              onClick={(e) => setTimeout(() => searchRef.current?.blur(), 1)}
+            >
               <FilterIcon size={20} />
               <p>Filter & Search</p>
             </Button>

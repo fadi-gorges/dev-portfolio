@@ -1,4 +1,4 @@
-import { frameworks, platforms } from "@/app/projects/ProjectList";
+import { frameworks, platforms } from "@/components/Icons";
 import {
   Card,
   CardContent,

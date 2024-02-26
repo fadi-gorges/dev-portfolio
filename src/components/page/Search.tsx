@@ -1,9 +1,7 @@
 "use client";
 
-import * as React from "react";
-
-import { frameworks } from "@/app/projects/ProjectList";
 import projects from "@/app/projects/projects.json";
+import { frameworks } from "@/components/Icons";
 import { navLinks } from "@/components/page/Navbar";
 import { Button } from "@/components/ui/button";
 import {
@@ -18,6 +16,7 @@ import { cn } from "@/lib/utils/cn";
 import { CommandSeparator } from "cmdk";
 import { SearchIcon } from "lucide-react";
 import Link from "next/link";
+import * as React from "react";
 
 type SearchProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
@@ -58,20 +57,23 @@ const Search = ({ className }: SearchProps) => {
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Pages">
-            {[navLinks.about, navLinks.projects, navLinks.contact].map(
-              (link) => (
-                <Link
-                  key={link.link}
-                  href={link.link}
-                  onClick={() => setOpen(false)}
-                >
-                  <CommandItem>
-                    <link.icon className="mr-2 h-4 w-4" />
-                    <span>{link.text}</span>
-                  </CommandItem>
-                </Link>
-              )
-            )}
+            {[
+              navLinks.home,
+              navLinks.about,
+              navLinks.projects,
+              navLinks.contact,
+            ].map((link) => (
+              <Link
+                key={link.link}
+                href={link.link}
+                onClick={() => setOpen(false)}
+              >
+                <CommandItem>
+                  <link.icon className="mr-2 h-4 w-4" />
+                  <span>{link.text}</span>
+                </CommandItem>
+              </Link>
+            ))}
           </CommandGroup>
           <CommandGroup heading="Projects">
             {projects.map((project) => {

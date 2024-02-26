@@ -1,7 +1,7 @@
 [
   {
     "title": "CitizenshipAU",
-    "short_description": "Website that helps people prepare for the Australian Citizenship Test.",
+    "short_description": "A website that helps people prepare for the Australian Citizenship Test.",
     "description": "CitizenshipAU is a website that helps people prepare for the Australian Citizenship Test. The front-end is built in NextJS, TypeScript and styled with TailwindCSS. For the back-end, PayloadCMS and MongoDB Atlas are utilised to handle the database and authentication.",
     "slug": "citizenshipau",
     "link": "https://www.citizenshipau.com",
@@ -12,7 +12,7 @@
   },
   {
     "title": "Dungeon of Death",
-    "short_description": "2D fantasy dungeon crawler game featuring dungeons, monsters, and loot.",
+    "short_description": "A 2D fantasy dungeon crawler game featuring dungeons, monsters, and loot.",
     "description": "Dungeon of Death is a 2D fantasy dungeon crawler game built in Unity, in which the player explores unique dungeons, fights monsters, and collects loot. This game received an assessment mark of 95/100 (Band 6) as my Industrial Technology Multimedia HSC Major Project.",
     "slug": "dungeon-of-death",
     "platform": "Cross Platform",
@@ -21,7 +21,7 @@
   },
   {
     "title": "BabylonFadez",
-    "short_description": "Aesthetic, modern and responsive landing page website.",
+    "short_description": "An aesthetic, modern and responsive landing page website.",
     "description": "BabylonFadez is an aesthetic, modern and responsive landing page website showcasing a local barber shop in Sydney, Australia. The site's layout was designed in Figma, and the front-end was built in NextJS, TypeScript and styled with TailwindCSS.",
     "slug": "babylonfadez",
     "link": "https://babylonfadez.vercel.app/",

@@ -36,7 +36,7 @@ const HeroSection = () => {
   return (
     <div
       id="hero-section"
-      className="relative overflow-hidden"
+      className="relative overflow-hidden min-h-[700px]"
       style={{ height: windowHeight || "100vh" }}
     >
       <div

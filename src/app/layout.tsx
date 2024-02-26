@@ -1,4 +1,3 @@
-import Utils from "@/app/Utils";
 import Footer from "@/components/page/Footer";
 import Navbar from "@/components/page/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -40,12 +39,10 @@ export default function RootLayout({
       <body className={cn("antialiased", inter.className)}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
-          <Utils>
-            <div className="flex flex-col justify-between min-h-screen gap-10">
-              {children}
-              <Footer />
-            </div>
-          </Utils>
+          <div className="flex flex-col justify-between min-h-screen min-h-svh gap-10">
+            {children}
+            <Footer />
+          </div>
           <Toaster richColors closeButton />
         </ThemeProvider>
         <SpeedInsights />
