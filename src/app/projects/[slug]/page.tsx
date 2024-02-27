@@ -1,3 +1,4 @@
+import Block from "@/app/projects/[slug]/Block";
 import projects from "@/app/projects/projects.json";
 import {
   MonoIcons,
@@ -129,10 +130,10 @@ const CitizenshipAUPage = ({ params }: { params: { slug: string } }) => {
         </div>
       </div>
       <Separator />
-      <div className="space-y-16 lg:space-y-24">
+      <div className="space-y-16 lg:space-y-36">
         <Block
-          imageSrc={`/${project?.slug}/screenshot2.jpg`}
-          imageAlt={`Screenshot of ${project?.title}`}
+          imageSrc={`/citizenshipau/citizenship-tests.jpg`}
+          imageAlt={`CitizenshipAU Tests`}
           title="The Best Resources for Future Citizens"
           alignText="right"
         >
@@ -152,10 +153,33 @@ const CitizenshipAUPage = ({ params }: { params: { slug: string } }) => {
           </h6>
         </Block>
         <Block
-          imageSrc={`/${project?.slug}/nextjs.jpg`}
+          imageSrc={`/citizenshipau/practice-test.jpg`}
+          imageAlt={`CitizenshipAU Practice Test`}
+          title="Integrated Translation and Text-to-Speech"
+          alignText="left"
+        >
+          <h6 className="text-muted-foreground">
+            Users can complete chapter tests and mock practice tests. The
+            chapter tests are focused on specific sections of the citizenship
+            test, while the mock practice tests provide a full simulation of the
+            actual test.
+            <br />
+            <br />
+            A key feature of CitizenshipAU is the integrated language
+            translation feature, which allows users to take the test in a number
+            of languages they are comfortable with.
+            <br />
+            <br />
+            Users can also utilise the text-to-speech functionality, which reads
+            out the questions and answer options, catering to auditory learners
+            and those with visual impairments.
+          </h6>
+        </Block>
+        <Block
+          imageSrc={`/citizenshipau/nextjs.jpg`}
           imageAlt={`Next.js Website`}
           title="Harnessing the Power of Next.js"
-          alignText="left"
+          alignText="right"
         >
           <h6 className="text-muted-foreground">
             CitizenshipAU is built on the Next.js framework. This open-source
@@ -187,10 +211,10 @@ const CitizenshipAUPage = ({ params }: { params: { slug: string } }) => {
           </Link>
         </Block>
         <Block
-          imageSrc={`/${project?.slug}/tailwindcss.jpg`}
+          imageSrc={`/citizenshipau/tailwindcss.jpg`}
           imageAlt={`TailwindCSS Website`}
           title="TailwindCSS and Shadcn/UI for UI Design"
-          alignText="right"
+          alignText="left"
         >
           <h6 className="text-muted-foreground">
             For the design and layout of CitizenshipAU, I utilised TailwindCSS
@@ -238,10 +262,10 @@ const CitizenshipAUPage = ({ params }: { params: { slug: string } }) => {
           </div>
         </Block>
         <Block
-          imageSrc={`/${project?.slug}/payloadcms.jpg`}
+          imageSrc={`/citizenshipau/payloadcms.jpg`}
           imageAlt={`PayloadCMS page`}
           title="PayloadCMS for Backend Management"
-          alignText="left"
+          alignText="right"
         >
           <h6 className="text-muted-foreground">
             The backend of CitizenshipAU is powered by MongoDB and PayloadCMS.
@@ -351,53 +375,6 @@ const FilterTableRow = ({
       <TableCell className="p-0 font-medium w-24 border-r">{title}</TableCell>
       <TableCell className="py-3">{children}</TableCell>
     </TableRow>
-  );
-};
-
-type BlockProps = HTMLAttributes<HTMLDivElement> & {
-  imageSrc: string;
-  imageAlt: string;
-  title: string;
-  alignText: "left" | "right";
-};
-
-const Block = ({
-  imageSrc,
-  imageAlt,
-  title,
-  alignText,
-  className,
-  children,
-}: BlockProps) => {
-  return (
-    <div className={cn("grid grid-cols-12 gap-y-6", className)}>
-      <div
-        className={cn(
-          "col-span-12 lg:col-span-5",
-          alignText === "left" ? "lg:pl-8" : "lg:pr-8"
-        )}
-      >
-        <div className="relative w-full h-full aspect-video lg:aspect-auto">
-          <Image
-            src={imageSrc}
-            alt={imageAlt}
-            fill
-            className="border rounded-2xl shadow-md object-top object-cover"
-          />
-        </div>
-      </div>
-      <div
-        className={cn(
-          "col-span-12 lg:col-span-7 space-y-5",
-          alignText === "left"
-            ? "lg:col-start-1 lg:row-start-1 lg:pr-8"
-            : "lg:pl-8"
-        )}
-      >
-        <h2 className="font-bold">{title}</h2>
-        {children}
-      </div>
-    </div>
   );
 };
 

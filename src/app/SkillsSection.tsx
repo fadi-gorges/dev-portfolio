@@ -60,10 +60,7 @@ const SkillsSection = () => {
           MY SKILLS
         </h3>
         <HoverEffect items={skills} className="scale-105 lg:scale-100" />
-        <h4
-          className="in-view text-end transition-[translate,opacity] duration-300 [&:not(.show)]:opacity-0 [&:not(.show)]:translate-y-5"
-          style={{ transitionDelay: "1s" }}
-        >
+        <h4 className="in-view text-muted-foreground text-end transition-[translate,opacity] duration-300 delay-700 [&:not(.show)]:opacity-0 [&:not(.show)]:translate-y-5">
           and more...
         </h4>
       </div>
