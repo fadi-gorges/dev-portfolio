@@ -41,7 +41,7 @@ const Search = ({ className }: SearchProps) => {
         variant="outline"
         size="sm"
         className={cn(
-          "flex-1 lg:flex-none justify-start gap-2 pl-3 lg:pr-1 text-muted-foreground",
+          "flex-1 lg:flex-none justify-start gap-2 lg:pr-1 text-muted-foreground",
           className
         )}
         onClick={() => setOpen(true)}

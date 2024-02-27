@@ -2,7 +2,6 @@ import { cn } from "@/lib/utils/cn";
 
 export interface ISVGProps extends React.SVGProps<SVGSVGElement> {
   size?: number;
-  className?: string;
 }
 
 const Spinner = ({ size = 24, className, ...props }: ISVGProps) => (

@@ -1,7 +1,7 @@
 "use client";
 
 import { MonoIcons } from "@/components/Icons";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import { cn } from "@/lib/utils/cn";
 import { convertRange } from "@/lib/utils/convertRange";
@@ -127,10 +127,8 @@ const HeroSection = () => {
               </a>
             ))}
             <Button
-              className={buttonVariants({
-                variant: "gradient",
-                className: "group",
-              })}
+              variant="gradient"
+              className="group"
               onClick={() => scrollIntoView("skills-section", -150)}
             >
               <p>More about me</p>

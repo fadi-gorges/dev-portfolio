@@ -6,9 +6,9 @@ type TitleProps = HTMLAttributes<HTMLHeadingElement>;
 
 export const Title = ({ className, children, ...props }: TitleProps) => {
   return (
-    <h2 className={cn("font-bold", className)} {...props}>
+    <h1 className={cn("lg:text-4xl font-bold", className)} {...props}>
       {children}
-    </h2>
+    </h1>
   );
 };
 
@@ -18,5 +18,5 @@ export const TitleSeparator = ({
   className,
   ...props
 }: TitleSeparatorProps) => {
-  return <Separator className={cn("lg:my-3", className)} {...props} />;
+  return <Separator className={cn("mb-1 lg:mb-3", className)} {...props} />;
 };

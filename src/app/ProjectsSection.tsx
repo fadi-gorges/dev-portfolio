@@ -31,9 +31,7 @@ const ProjectsSection = () => {
               />
             </div>
             <div className="in-view col-span-12 lg:col-start-7 lg:col-span-6 flex flex-col justify-center gap-2 lg:gap-5 [&:not(.show)]:opacity-0 transition-opacity duration-500">
-              <h4 className={cn("font-bold italic text-primary")}>
-                {project.title}
-              </h4>
+              <h3 className="font-bold text-primary">{project.title}</h3>
               <h6>{project.description}</h6>
               <BorderButton href={`/projects/${project.slug}`} className="mt-3">
                 <h6 className="font-bold">View More</h6>
@@ -45,12 +43,14 @@ const ProjectsSection = () => {
       ))}
       <Link
         href="/projects"
-        className={buttonVariants({
-          variant: "gradient",
-          size: "lg",
-          className:
-            "in-view py-6 lg:py-8 transition-[translate,opacity] duration-500 [&:not(.show)]:opacity-0 [&:not(.show)]:-translate-y-5",
-        })}
+        className={cn(
+          buttonVariants({
+            variant: "gradient",
+            size: "lg",
+            className:
+              "in-view py-6 lg:py-8 transition-[translate,opacity] duration-500 [&:not(.show)]:opacity-0 [&:not(.show)]:-translate-y-5",
+          })
+        )}
       >
         <h6>View All Projects</h6>
         <ArrowRightIcon />

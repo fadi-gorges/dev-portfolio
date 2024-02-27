@@ -17,7 +17,8 @@
     "slug": "dungeon-of-death",
     "platform": "Cross Platform",
     "framework": "Unity",
-    "languages": ["C#"]
+    "languages": ["C#"],
+    "alignScreenshotCenter": true
   },
   {
     "title": "BabylonFadez",
@@ -29,7 +30,8 @@
     "platform": "Web",
     "framework": "Next.js",
     "languages": ["HTML", "CSS", "TypeScript"],
-    "tools": ["TailwindCSS", "Figma"]
+    "tools": ["TailwindCSS", "Figma"],
+    "alignScreenshotCenter": true
   },
   {
     "title": "Dev Portfolio",
@@ -40,6 +42,7 @@
     "platform": "Web",
     "framework": "Next.js",
     "languages": ["HTML", "CSS", "TypeScript"],
-    "tools": ["TailwindCSS", "Shadcn/ui", "AceternityUI"]
+    "tools": ["TailwindCSS", "Shadcn/ui", "AceternityUI"],
+    "alignScreenshotCenter": true
   }
 ]

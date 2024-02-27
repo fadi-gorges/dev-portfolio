@@ -40,7 +40,7 @@ export const navLinks = {
   contact: { text: "Contact", link: "/contact", icon: MailIcon },
 };
 
-const progressEnabledPaths = ["/", "/about"];
+const progressEnabledPaths = ["/", "/about", "/projects/"];
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -85,7 +85,9 @@ const Navbar = () => {
           scrollY !== 0 && "bg-background/85 backdrop-blur-md border"
         )}
       >
-        {progressEnabledPaths.includes(pathname) && (
+        {progressEnabledPaths.some((path) =>
+          path === "/" ? pathname === path : pathname.startsWith(path)
+        ) && (
           <div
             className="absolute left-0 bottom-0 h-0.5 bg-primary/80"
             style={{ width: `${scrollYProgress * 100}%` }}
@@ -143,16 +145,18 @@ const NavLink = ({
   ) : (
     <Link
       href={link.link}
-      className={buttonVariants({
-        variant: "ghost",
-        size: link.text ? "sm" : "icon",
-        className: cn(
-          "hidden lg:inline-flex",
-          link.text && "px-3",
-          isActive ? "font-semibold" : "text-muted-foreground",
-          className
-        ),
-      })}
+      className={cn(
+        buttonVariants({
+          variant: "ghost",
+          size: link.text ? "sm" : "icon",
+          className: cn(
+            "hidden lg:inline-flex",
+            link.text && "px-3",
+            isActive ? "font-semibold" : "text-muted-foreground",
+            className
+          ),
+        })
+      )}
       {...props}
     >
       {link.text ? <p>{link.text}</p> : <link.icon size={30} />}
