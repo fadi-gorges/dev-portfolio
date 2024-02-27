@@ -9,13 +9,16 @@ import { scrollIntoView } from "@/lib/utils/scrollIntoView";
 import { useScrollPosition } from "@/lib/utils/useScrollPosition";
 import { ChevronDownIcon } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { isDesktop } from "react-device-detect";
 
 const HeroSection = () => {
   const [windowHeight, setWindowHeight] = useState(0);
   const { scrollY } = useScrollPosition();
-  const range = convertRange(scrollY, [0, windowHeight], [0, 1]);
+  const range = useMemo(
+    () => convertRange(scrollY, [0, windowHeight], [0, 1]),
+    [scrollY, windowHeight]
+  );
 
   const [mouseX, setMouseX] = useState(0);
   const [mouseY, setMouseY] = useState(0);

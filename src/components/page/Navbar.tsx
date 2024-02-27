@@ -24,7 +24,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AnchorHTMLAttributes, useState } from "react";
+import { AnchorHTMLAttributes, useMemo, useState } from "react";
 
 type Link = {
   text?: string;
@@ -114,11 +114,14 @@ const NavLink = ({
   drawerLink?: boolean;
 } & AnchorHTMLAttributes<HTMLAnchorElement>) => {
   const pathname = usePathname();
-  const isActive =
-    !link.text ||
-    (link.link === "/"
-      ? pathname === link.link
-      : pathname.startsWith(link.link));
+  const isActive = useMemo(
+    () =>
+      !link.text ||
+      (link.link === "/"
+        ? pathname === link.link
+        : pathname.startsWith(link.link)),
+    [pathname, link.link]
+  );
 
   return drawerLink ? (
     <SheetClose asChild>

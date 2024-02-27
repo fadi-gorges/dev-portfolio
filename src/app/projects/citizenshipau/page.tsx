@@ -10,7 +10,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { getProject } from "@/lib/utils/getProject";
-import { ArrowRightCircleIcon } from "lucide-react";
+import { ExternalLinkIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -55,7 +55,7 @@ const CitizenshipAUPage = () => {
             })}
           >
             <h6>Visit {project?.title}</h6>
-            <ArrowRightCircleIcon />
+            <ExternalLinkIcon />
           </Link>
           <Table>
             <TableBody>
