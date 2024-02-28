@@ -1,7 +1,7 @@
 "use client";
 
-import FilterSection from "@/app/projects/FilterSection";
-import ProjectCard from "@/app/projects/ProjectCard";
+import FilterSection from "@/app/projects/_components/FilterSection";
+import ProjectCard from "@/app/projects/_components/ProjectCard";
 import projects from "@/app/projects/projects.json";
 import { frameworks, languages, platforms, tools } from "@/components/Icons";
 import { Title, TitleSeparator } from "@/components/page/Title";

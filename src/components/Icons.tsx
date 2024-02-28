@@ -4,6 +4,7 @@ import {
   BlocksIcon,
   Code2Icon,
   DatabaseIcon,
+  Flower2Icon,
   GlobeIcon,
   MonitorSmartphoneIcon,
 } from "lucide-react";
@@ -407,6 +408,10 @@ const AceternityUIIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
   <BlocksIcon className={className} size={size} {...props} />
 );
 
+const DaisyUIIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
+  <Flower2Icon className={className} size={size} {...props} />
+);
+
 const CSharpIcon = ({ className, size = 24, ...props }: SVGIconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -461,6 +466,7 @@ export const MonoIcons = {
   figma: FigmaIcon,
   shadcn: ShadcnIcon,
   aceternityui: AceternityUIIcon,
+  daisyui: DaisyUIIcon,
   csharp: CSharpIcon,
   winforms: WinFormsIcon,
   sqlite: SQLiteIcon,
@@ -495,6 +501,7 @@ export const tools: Filters = {
   TailwindCSS: MonoIcons.tailwindcss,
   "Shadcn/ui": MonoIcons.shadcn,
   AceternityUI: MonoIcons.aceternityui,
+  DaisyUI: MonoIcons.daisyui,
   PayloadCMS: MonoIcons.payload,
   MongoDB: MonoIcons.mongodb,
   SQLite: MonoIcons.sqlite,

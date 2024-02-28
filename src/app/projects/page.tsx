@@ -1,4 +1,4 @@
-import ProjectList from "@/app/projects/ProjectList";
+import ProjectList from "@/app/projects/_components/ProjectList";
 import Main from "@/components/page/Main";
 import { Metadata } from "next";
 

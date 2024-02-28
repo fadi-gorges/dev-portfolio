@@ -30,7 +30,7 @@
     "platform": "Web",
     "framework": "Next.js",
     "languages": ["HTML", "CSS", "TypeScript"],
-    "tools": ["TailwindCSS", "Figma"],
+    "tools": ["TailwindCSS", "Figma", "DaisyUI"],
     "alignScreenshotCenter": true
   },
   {

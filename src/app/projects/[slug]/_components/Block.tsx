@@ -58,13 +58,13 @@ const Block = ({
       </div>
       <div
         className={cn(
-          "col-span-12 lg:col-span-7 space-y-5",
+          "col-span-12 lg:col-span-7 space-y-5 text-muted-foreground",
           alignText === "left"
             ? "lg:col-start-1 lg:row-start-1 lg:pr-8"
             : "lg:pl-8"
         )}
       >
-        <h2 className="font-bold">{title}</h2>
+        <h2 className="text-foreground font-bold">{title}</h2>
         {children}
       </div>
     </div>

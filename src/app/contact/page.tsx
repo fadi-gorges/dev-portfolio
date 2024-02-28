@@ -1,4 +1,4 @@
-import ContactForm from "@/app/contact/ContactForm";
+import ContactForm from "@/app/contact/_components/ContactForm";
 import Main from "@/components/page/Main";
 import { Title, TitleSeparator } from "@/components/page/Title";
 import { Metadata } from "next";

@@ -1,7 +1,7 @@
-import AboutSection from "@/app/AboutSection";
-import HeroSection from "@/app/HeroSection";
-import ProjectsSection from "@/app/ProjectsSection";
-import SkillsSection from "@/app/SkillsSection";
+import AboutSection from "@/app/_components/AboutSection";
+import HeroSection from "@/app/_components/HeroSection";
+import ProjectsSection from "@/app/_components/ProjectsSection";
+import SkillsSection from "@/app/_components/SkillsSection";
 import { UseIntersectionObserver } from "@/lib/utils/useIntersectionObserver";
 
 const HomePage = () => {
