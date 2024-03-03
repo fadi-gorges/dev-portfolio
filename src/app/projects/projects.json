@@ -8,7 +8,15 @@
     "platform": "Web",
     "framework": "Next.js",
     "languages": ["HTML", "CSS", "TypeScript"],
-    "tools": ["TailwindCSS", "PayloadCMS", "MongoDB", "Shadcn/ui"]
+    "tools": ["TailwindCSS", "PayloadCMS", "MongoDB", "Shadcn/ui"],
+    "screenshotAlignment": "top",
+    "buttons": [
+      {
+        "type": "main",
+        "text": "Visit CitizenshipAU",
+        "link": "https://www.citizenshipau.com"
+      }
+    ]
   },
   {
     "title": "Dungeon of Death",
@@ -18,7 +26,13 @@
     "platform": "Cross Platform",
     "framework": "Unity",
     "languages": ["C#"],
-    "alignScreenshotCenter": true
+    "buttons": [
+      {
+        "type": "main",
+        "text": "Play Dungeon of Death",
+        "link": "#"
+      }
+    ]
   },
   {
     "title": "BabylonFadez",
@@ -26,12 +40,21 @@
     "description": "BabylonFadez is an aesthetic, modern and responsive landing page website showcasing a local barber shop in Sydney, Australia. The site's layout was designed in Figma, and the front-end was built in NextJS, TypeScript and styled with TailwindCSS.",
     "slug": "babylonfadez",
     "link": "https://babylonfadez.vercel.app/",
-    "github": "https://github.com/fadi-gorges/BabylonFadez",
     "platform": "Web",
     "framework": "Next.js",
     "languages": ["HTML", "CSS", "TypeScript"],
     "tools": ["TailwindCSS", "Figma", "DaisyUI"],
-    "alignScreenshotCenter": true
+    "buttons": [
+      {
+        "type": "main",
+        "text": "Visit BabylonFadez",
+        "link": "https://babylonfadez.vercel.app/"
+      },
+      {
+        "type": "github",
+        "link": "https://github.com/fadi-gorges/BabylonFadez"
+      }
+    ]
   },
   {
     "title": "Dev Portfolio",
@@ -43,6 +66,11 @@
     "framework": "Next.js",
     "languages": ["HTML", "CSS", "TypeScript"],
     "tools": ["TailwindCSS", "Shadcn/ui", "AceternityUI"],
-    "alignScreenshotCenter": true
+    "buttons": [
+      {
+        "type": "github",
+        "link": "https://github.com/fadi-gorges/dev-portfolio"
+      }
+    ]
   }
 ]

@@ -60,7 +60,7 @@ const SkillsSection = () => {
           MY SKILLS
         </h3>
         <HoverEffect items={skills} className="scale-105 lg:scale-100" />
-        <h4 className="in-view text-muted-foreground text-end transition-[translate,opacity] duration-300 delay-700 [&:not(.show)]:opacity-0 [&:not(.show)]:translate-y-5">
+        <h4 className="in-view text-muted-foreground text-end transition-[translate,opacity] duration-300 delay-300 [&:not(.show)]:opacity-0 [&:not(.show)]:translate-y-5">
           and more...
         </h4>
       </div>
@@ -91,7 +91,7 @@ const HoverEffect = ({
           href={item?.link}
           target="_blank"
           className="in-view relative group block w-full p-1 text-foreground [&:not(.show)]:opacity-0 [&:not(.show)]:-translate-x-10 transition-[translate,opacity] duration-500"
-          style={{ transitionDelay: `${0.15 + idx * 0.075}s` }}
+          style={{ transitionDelay: `${idx * 0.075}s` }}
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >

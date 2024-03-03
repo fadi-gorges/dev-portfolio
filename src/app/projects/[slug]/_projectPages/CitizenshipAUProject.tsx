@@ -1,14 +1,12 @@
 import Block from "@/app/projects/[slug]/_components/Block";
+import VisitButton from "@/app/projects/[slug]/_components/buttons/VisitButton";
 import { MonoIcons } from "@/components/Icons";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils/cn";
-import Link from "next/link";
 
 const CitizenshipAUProject = (
-  <div className="space-y-16 lg:space-y-36">
+  <>
     <Block
-      imageSrc={`/citizenshipau/citizenship-tests.jpg`}
-      imageAlt={`CitizenshipAU Tests`}
+      imageSrc="/citizenshipau/citizenship-tests.jpg"
+      imageAlt="CitizenshipAU Tests"
       title="The Best Resources for Future Citizens"
       alignText="right"
     >
@@ -27,8 +25,8 @@ const CitizenshipAUProject = (
       </h6>
     </Block>
     <Block
-      imageSrc={`/citizenshipau/practice-test.jpg`}
-      imageAlt={`CitizenshipAU Practice Test`}
+      imageSrc="/citizenshipau/practice-test.jpg"
+      imageAlt="CitizenshipAU Practice Test"
       title="Integrated Translation and Text-to-Speech"
       alignText="left"
     >
@@ -49,8 +47,8 @@ const CitizenshipAUProject = (
       </h6>
     </Block>
     <Block
-      imageSrc={`/citizenshipau/nextjs.jpg`}
-      imageAlt={`Next.js Website`}
+      imageSrc="/citizenshipau/nextjs.jpg"
+      imageAlt="Next.js Website"
       title="Harnessing the Power of Next.js"
       alignText="right"
     >
@@ -68,24 +66,13 @@ const CitizenshipAUProject = (
         ensured safer and more reliable code, reducing the likelihood of runtime
         errors.
       </h6>
-      <Link
-        href="https://nextjs.org/"
-        target="_blank"
-        className={cn(
-          buttonVariants({
-            variant: "secondary",
-            size: "lg",
-            className: "w-full py-6",
-          })
-        )}
-      >
-        <h6>View Next.js Documentation</h6>
-        <MonoIcons.nextjs />
-      </Link>
+      <VisitButton href="https://nextjs.org/" icon={MonoIcons.nextjs}>
+        View Next.js Documentation
+      </VisitButton>
     </Block>
     <Block
-      imageSrc={`/citizenshipau/tailwindcss.jpg`}
-      imageAlt={`TailwindCSS Website`}
+      imageSrc="/citizenshipau/tailwindcss.jpg"
+      imageAlt="TailwindCSS Website"
       title="TailwindCSS and Shadcn/UI for UI Design"
       alignText="left"
     >
@@ -104,38 +91,25 @@ const CitizenshipAUProject = (
         pages of my website.
       </h6>
       <div className="flex gap-3">
-        <Link
+        <VisitButton
           href="https://tailwindcss.com/"
-          target="_blank"
-          className={cn(
-            buttonVariants({
-              variant: "secondary",
-              className: "flex-1 py-6",
-            })
-          )}
+          icon={MonoIcons.tailwindcss}
+          small
         >
-          <p>View TailwindCSS</p>
-          <MonoIcons.tailwindcss />
-        </Link>
-        <Link
+          View TailwindCSS
+        </VisitButton>
+        <VisitButton
           href="https://ui.shadcn.com/"
-          target="_blank"
-          className={cn(
-            buttonVariants({
-              variant: "secondary",
-              size: "sm",
-              className: "flex-1 py-6",
-            })
-          )}
+          icon={MonoIcons.shadcn}
+          small
         >
-          <p>View Shadcn/UI</p>
-          <MonoIcons.shadcn />
-        </Link>
+          View Shadcn/UI
+        </VisitButton>
       </div>
     </Block>
     <Block
-      imageSrc={`/citizenshipau/payloadcms.jpg`}
-      imageAlt={`PayloadCMS page`}
+      imageSrc="/citizenshipau/payloadcms.jpg"
+      imageAlt="PayloadCMS page"
       title="PayloadCMS for Backend Management"
       alignText="right"
     >
@@ -152,21 +126,12 @@ const CitizenshipAUProject = (
         yet powerful interface for managing the database of questions and user
         data.
       </h6>
-      <Link
-        href="https://payloadcms.com/"
-        target="_blank"
-        className={cn(
-          buttonVariants({
-            variant: "secondary",
-            className: "w-full py-6",
-          })
-        )}
-      >
-        <h6>View PayloadCMS Documentation</h6>
-        <MonoIcons.payload />
-      </Link>
+
+      <VisitButton href="https://payloadcms.com/" icon={MonoIcons.payload}>
+        View PayloadCMS Documentation
+      </VisitButton>
     </Block>
-  </div>
+  </>
 );
 
 export default CitizenshipAUProject;

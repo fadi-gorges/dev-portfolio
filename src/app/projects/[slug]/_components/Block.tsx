@@ -21,7 +21,16 @@ const Block = ({
   children,
 }: BlockProps) => {
   return (
-    <div className={cn("grid grid-cols-12 gap-y-6", className)}>
+    <div
+      className={cn(
+        `in-view grid grid-cols-12 gap-y-6 [&:not(.show)]:opacity-0 ${
+          alignText === "left"
+            ? "[&:not(.show)]:translate-x-3"
+            : "[&:not(.show)]:-translate-x-3"
+        } transition-[opacity,translate] duration-500`,
+        className
+      )}
+    >
       <div
         className={cn(
           "col-span-12 lg:col-span-5",
@@ -43,14 +52,14 @@ const Block = ({
               </div>
             </DialogTrigger>
             <DialogContent
-              className="w-[95%] h-[95vw] lg:h-[95%] lg:w-[95vh] max-w-full max-h-full"
+              className="w-[95%] h-[95vw] lg:h-[95%] lg:w-[95vh] max-w-full max-h-full rounded-2xl overflow-hidden"
               dialogXClassName="bg-background opacity-100"
             >
               <Image
                 src={imageSrc}
                 alt={imageAlt}
                 fill
-                className="border rounded-2xl shadow-md object-top object-cover"
+                className="object-top object-cover rounded-2xl"
               />
             </DialogContent>
           </Dialog>

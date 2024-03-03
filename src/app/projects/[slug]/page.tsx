@@ -1,10 +1,18 @@
+import VisitButton, {
+  VisitButtonProps,
+} from "@/app/projects/[slug]/_components/buttons/VisitButton";
 import { ProjectPages } from "@/app/projects/[slug]/_projectPages";
 import projects from "@/app/projects/projects.json";
-import { frameworks, languages, platforms, tools } from "@/components/Icons";
+import {
+  MonoIcons,
+  frameworks,
+  languages,
+  platforms,
+  tools,
+} from "@/components/Icons";
 import CardStack from "@/components/custom/card-stack";
 import Main from "@/components/page/Main";
 import { Title } from "@/components/page/Title";
-import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import {
@@ -14,7 +22,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils/cn";
-import { ExternalLinkIcon } from "lucide-react";
+import { UseIntersectionObserver } from "@/lib/utils/useIntersectionObserver";
+import { ArrowLeftIcon, ExternalLinkIcon } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -43,7 +52,21 @@ export function generateMetadata({
     description: getProject(params.slug)?.description,
   };
 }
-const CitizenshipAUPage = ({ params }: { params: { slug: string } }) => {
+
+const buttonTypes: {
+  [key: string]: (props: Omit<VisitButtonProps, "icon">) => JSX.Element;
+} = {
+  main: (props) => (
+    <VisitButton icon={ExternalLinkIcon} variant="gradient" {...props} />
+  ),
+  github: (props) => (
+    <VisitButton icon={MonoIcons.github} {...props}>
+      View on Github
+    </VisitButton>
+  ),
+};
+
+const ProjectPage = ({ params }: { params: { slug: string } }) => {
   const project = getProject(params.slug);
 
   if (!project) {
@@ -60,9 +83,17 @@ const CitizenshipAUPage = ({ params }: { params: { slug: string } }) => {
   const ToolIcons = project.tools?.map((tool) => tools[tool]);
 
   return (
-    <Main className="gap-10 lg:gap-y-20">
+    <Main>
+      <UseIntersectionObserver />
+      <Link
+        href="/projects"
+        className="group flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
+      >
+        <ArrowLeftIcon size={16} />
+        <small>View all Projects</small>
+      </Link>
       <div className="grid grid-cols-12 lg:min-h-[386px]">
-        <div className="col-span-12 lg:col-span-6 lg:pr-8 flex flex-col justify-center gap-7 lg:gap-4">
+        <div className="col-span-12 lg:col-span-6 lg:pr-8 flex flex-col justify-center gap-7 lg:gap-3">
           <div className="space-y-3">
             <Title>{project?.title}</Title>
             <h6 className="text-muted-foreground">
@@ -70,22 +101,16 @@ const CitizenshipAUPage = ({ params }: { params: { slug: string } }) => {
             </h6>
           </div>
           <MainImage type="sm" project={project} className="mb-3" />
-          {project.link && (
-            <Link
-              href={project?.link}
-              target="_blank"
-              className={cn(
-                buttonVariants({
-                  variant: "gradient",
-                  size: "lg",
-                  className: "w-full py-7",
-                })
-              )}
-            >
-              <h6>Visit {project?.title}</h6>
-              <ExternalLinkIcon />
-            </Link>
-          )}
+          <div className="space-y-2 lg:space-y-3">
+            {project.buttons.map((button) => {
+              const LinkButton = buttonTypes[button.type];
+              return (
+                <LinkButton key={button.link} href={button.link}>
+                  {"text" in button ? button.text : ""}
+                </LinkButton>
+              );
+            })}
+          </div>
           <Table>
             <TableBody>
               <FilterTableRow title="Platform">
@@ -125,8 +150,8 @@ const CitizenshipAUPage = ({ params }: { params: { slug: string } }) => {
           <MainImage type="lg" project={project} />
         </div>
       </div>
-      <Separator />
-      {ProjectPage}
+      <Separator className="my-10 lg:my-20" />
+      <div className="space-y-16 lg:space-y-36">{ProjectPage}</div>
     </Main>
   );
 };
@@ -159,7 +184,7 @@ const MainImage = ({ type, project, className }: MainImageProps) => {
         fill
         className={cn(
           "object-cover",
-          project.alignScreenshotCenter ? "object-center" : "object-top"
+          project.screenshotAlignment === "top" ? "object-top" : "object-center"
         )}
       />
     </CardStack>
@@ -210,4 +235,4 @@ const FilterTableRow = ({
   );
 };
 
-export default CitizenshipAUPage;
+export default ProjectPage;

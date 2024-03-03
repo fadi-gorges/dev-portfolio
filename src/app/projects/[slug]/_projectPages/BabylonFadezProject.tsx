@@ -1,14 +1,12 @@
 import Block from "@/app/projects/[slug]/_components/Block";
+import VisitButton from "@/app/projects/[slug]/_components/buttons/VisitButton";
 import { MonoIcons } from "@/components/Icons";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils/cn";
-import Link from "next/link";
 
 const BabylonFadezProject = (
-  <div className="space-y-16 lg:space-y-36">
+  <>
     <Block
-      imageSrc={`/babylonfadez/1.jpg`}
-      imageAlt={`1`}
+      imageSrc="/babylonfadez/screenshot2.jpg"
+      imageAlt="BabylonFadez website"
       title="A Modern Landing Page"
       alignText="right"
     >
@@ -28,8 +26,8 @@ const BabylonFadezProject = (
       </h6>
     </Block>
     <Block
-      imageSrc={`/babylonfadez/2.jpg`}
-      imageAlt={`2`}
+      imageSrc="/babylonfadez/2.jpg"
+      imageAlt="2"
       title="Building with Figma and Next.js"
       alignText="left"
     >
@@ -40,44 +38,52 @@ const BabylonFadezProject = (
         layout that reflects the barbershop&apos;s brand.
         <br />
         <br />
-        The frontend of BabylonFadez was built using a combination of Next.js,
-        TypeScript and TailwindCSS. Next.js, a React framework, was used for its
+        The frontend of BabylonFadez was built using a combination of Next.js
+        and TypeScript. Next.js, a React framework, was used for its
         performance, providing a quick load up and seamless browsing experience.
         TypeScript, a statically typed superset of JavaScript, ensured safer and
-        more reliable code. HTML and TailwindCSS were used to structure and
-        style the website, creating a clean and interactive user interface.
+        more reliable code.
       </h6>
       <div className="flex gap-3">
-        <Link
-          href="https://tailwindcss.com/"
-          target="_blank"
-          className={cn(
-            buttonVariants({
-              variant: "secondary",
-              className: "flex-1 py-6",
-            })
-          )}
-        >
-          <p>View TailwindCSS</p>
-          <MonoIcons.tailwindcss />
-        </Link>
-        <Link
-          href="https://ui.shadcn.com/"
-          target="_blank"
-          className={cn(
-            buttonVariants({
-              variant: "secondary",
-              size: "sm",
-              className: "flex-1 py-6",
-            })
-          )}
-        >
-          <p>View Shadcn/UI</p>
-          <MonoIcons.shadcn />
-        </Link>
+        <VisitButton href="https://www.figma.com/" icon={MonoIcons.figma} small>
+          View Figma
+        </VisitButton>
+        <VisitButton href="https://nextjs.org/" icon={MonoIcons.nextjs} small>
+          View Next.js
+        </VisitButton>
       </div>
     </Block>
-  </div>
+    <Block
+      imageSrc="/babylonfadez/2.jpg"
+      imageAlt="2"
+      title="Styling with TailwindCSS and DaisyUI"
+      alignText="right"
+    >
+      <h6>
+        The styling of BabylonFadez was achieved using TailwindCSS and DaisyUI,
+        two powerful tools that brought the design vision to life. TailwindCSS,
+        a utility-first CSS framework, provided the flexibility to create custom
+        designs with ease through the use of low-level utility classes. DaisyUI,
+        a plugin that extends TailwindCSS, was utilised to provide beautifully
+        crafted UI components and extending the design possibilities. The
+        combination of TailwindCSS and DaisyUI allowed for a highly customizable
+        design process, resulting in a visually appealing, modern, and
+        responsive landing page that encapsulates the vibe of BabylonFadez.
+      </h6>
+      <div className="flex gap-3">
+        <VisitButton
+          href="https://tailwindcss.com/"
+          icon={MonoIcons.tailwindcss}
+          small
+        >
+          View TailwindCSS
+        </VisitButton>
+        <VisitButton href="https://daisyui.com/" icon={MonoIcons.daisyui} small>
+          View DaisyUI
+        </VisitButton>
+      </div>
+    </Block>
+  </>
 );
 
 export default BabylonFadezProject;
