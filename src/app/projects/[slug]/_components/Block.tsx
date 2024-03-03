@@ -33,11 +33,11 @@ const Block = ({
     >
       <div
         className={cn(
-          "col-span-12 lg:col-span-5",
+          "col-span-12 lg:col-span-5 flex items-center",
           alignText === "left" ? "lg:pl-8" : "lg:pr-8"
         )}
       >
-        <div className="relative w-full h-full aspect-video lg:aspect-auto border rounded-2xl shadow-md overflow-hidden">
+        <div className="relative w-full lg:min-h-96 aspect-video lg:aspect-auto border rounded-2xl shadow-md overflow-hidden">
           <Dialog>
             <DialogTrigger className="group">
               <Image
@@ -52,14 +52,14 @@ const Block = ({
               </div>
             </DialogTrigger>
             <DialogContent
-              className="w-[95%] h-[95vw] lg:h-[95%] lg:w-[95vh] max-w-full max-h-full rounded-2xl overflow-hidden"
+              className="w-[95%] h-[95vw] lg:h-[95%] lg:w-[95vh] max-w-full max-h-full"
               dialogXClassName="bg-background opacity-100"
             >
               <Image
                 src={imageSrc}
                 alt={imageAlt}
                 fill
-                className="object-top object-cover rounded-2xl"
+                className="object-top object-cover"
               />
             </DialogContent>
           </Dialog>
@@ -67,7 +67,7 @@ const Block = ({
       </div>
       <div
         className={cn(
-          "col-span-12 lg:col-span-7 space-y-5 text-muted-foreground",
+          "col-span-12 lg:col-span-7 flex flex-col justify-center gap-5 text-muted-foreground",
           alignText === "left"
             ? "lg:col-start-1 lg:row-start-1 lg:pr-8"
             : "lg:pl-8"

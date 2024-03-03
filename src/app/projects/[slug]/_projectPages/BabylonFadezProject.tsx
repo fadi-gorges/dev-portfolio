@@ -26,7 +26,7 @@ const BabylonFadezProject = (
       </h6>
     </Block>
     <Block
-      imageSrc="/babylonfadez/2.jpg"
+      imageSrc="/babylonfadez/figma.jpg"
       imageAlt="2"
       title="Building with Figma and Next.js"
       alignText="left"
@@ -54,7 +54,7 @@ const BabylonFadezProject = (
       </div>
     </Block>
     <Block
-      imageSrc="/babylonfadez/2.jpg"
+      imageSrc="/babylonfadez/daisyui.jpg"
       imageAlt="2"
       title="Styling with TailwindCSS and DaisyUI"
       alignText="right"

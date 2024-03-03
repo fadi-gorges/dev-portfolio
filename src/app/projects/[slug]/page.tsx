@@ -150,8 +150,8 @@ const ProjectPage = ({ params }: { params: { slug: string } }) => {
           <MainImage type="lg" project={project} />
         </div>
       </div>
-      <Separator className="my-10 lg:my-20" />
-      <div className="space-y-16 lg:space-y-36">{ProjectPage}</div>
+      <Separator className="my-10 lg:my-16" />
+      <div className="space-y-16 lg:space-y-32">{ProjectPage}</div>
     </Main>
   );
 };
