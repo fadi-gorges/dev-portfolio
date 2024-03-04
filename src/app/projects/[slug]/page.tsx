@@ -154,7 +154,7 @@ const MainImage = ({ type, project, className }: MainImageProps) => {
       hoverEffect
     >
       <Image
-        src={`/${project?.slug}/screenshot.jpg`}
+        src={`/media/${project?.slug}/screenshot.jpg`}
         alt={`Screenshot of ${project?.title}`}
         fill
         className={cn(

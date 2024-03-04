@@ -28,9 +28,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
       <Card className="min-h-[325px] md:min-h-[425px] flex flex-col hover:shadow-md hover:bg-primary/5 transition duration-300">
         <CardHeader className="px-4 lg:px-6">
           <Image
-            src={`/${project.slug}/mockup.png`}
+            src={`/media/${project.slug}/mockup.png`}
             alt={`${project.title} Image`}
-            className="aspect-[31/18]"
+            className="aspnshotect-[31/18]"
             width={500}
             height={500}
           />
