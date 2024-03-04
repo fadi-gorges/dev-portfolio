@@ -3,6 +3,7 @@
 import { MonoIcons } from "@/components/Icons";
 import { Button } from "@/components/ui/button";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
+import { chivoMono } from "@/lib/fonts";
 import { cn } from "@/lib/utils/cn";
 import { convertRange } from "@/lib/utils/convertRange";
 import { scrollIntoView } from "@/lib/utils/scrollIntoView";
@@ -38,13 +39,14 @@ const HeroSection = () => {
 
   return (
     <div
-      id="hero-section"
       className="relative overflow-hidden min-h-[700px]"
       style={{ height: windowHeight || "100vh" }}
     >
       <div
         className="absolute inset-0 w-full h-full dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white_20%,transparent)] -z-10"
-        style={{ transform: `translateY(${300 * range}px)` }}
+        style={{
+          transform: isDesktop ? `translateY(${300 * range}px)` : "none",
+        }}
       />
       <div
         className={cn(
@@ -70,7 +72,7 @@ const HeroSection = () => {
           <div className="relative perspective-250">
             <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-blue-500 to-teal-500 transform scale-[0.85] rounded-full animate-glow -z-10" />
             <Image
-              src="/fadi.jpg"
+              src="/media/fadi.jpg"
               alt="Portrait of Fadi Gorges"
               width={300}
               height={300}
@@ -95,13 +97,17 @@ const HeroSection = () => {
               : {}
           }
         >
-          <h1 className="font-extrabold text-primary tracking-wide">
+          <h1 className="font-semibold text-primary tracking-wide">
             Full-Stack
             <br />
             Software{" "}
             <TypewriterEffect
               speed={0.1}
-              cursorClassName="bg-primary -translate-x-2"
+              className={cn(
+                "font-bold tracking-wide md:tracking-normal",
+                chivoMono.className
+              )}
+              cursorClassName="bg-primary -translate-x-4 md:-translate-x-6"
               words={[{ text: "Developer" }]}
             />
           </h1>
@@ -130,7 +136,7 @@ const HeroSection = () => {
             <Button
               variant="gradient"
               className="group"
-              onClick={() => scrollIntoView("skills-section", -150)}
+              onClick={() => scrollIntoView("about-section", -75)}
             >
               <p>More about me</p>
               <div className="relative group-hover:-translate-y-1 transition-transform">

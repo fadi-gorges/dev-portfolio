@@ -25,10 +25,8 @@ const Block = ({
   return (
     <div
       className={cn(
-        `in-view grid grid-cols-12 gap-y-6 [&:not(.show)]:opacity-0 ${
-          alignText === "left"
-            ? "[&:not(.show)]:translate-x-3"
-            : "[&:not(.show)]:-translate-x-3"
+        `in-view grid grid-cols-12 gap-y-6 [&:not(.show)]:opacity-0 [&:not(.show)]:-translate-x-3 ${
+          alignText === "left" && "lg:[&:not(.show)]:translate-x-3"
         } transition-[opacity,translate] duration-500`,
         className
       )}

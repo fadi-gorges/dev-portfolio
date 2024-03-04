@@ -1,11 +1,11 @@
 import Block from "@/app/projects/[slug]/_components/Block";
-import VisitButton from "@/app/projects/[slug]/_components/buttons/VisitButton";
+import VisitButton from "@/app/projects/[slug]/_components/VisitButton";
 import { MonoIcons } from "@/components/Icons";
 
 const BabylonFadezProject = (
   <>
     <Block
-      imageSrc="/babylonfadez/screenshot2.jpg"
+      imageSrc="/media/babylonfadez/screenshot2.jpg"
       imageAlt="BabylonFadez website"
       title="A Modern Landing Page"
       alignText="right"
@@ -26,7 +26,7 @@ const BabylonFadezProject = (
       </h6>
     </Block>
     <Block
-      imageSrc="/babylonfadez/figma.jpg"
+      imageSrc="/media/babylonfadez/figma.jpg"
       imageAlt="Figma Website"
       title="Building with Figma and Next.js"
       alignText="left"
@@ -45,16 +45,26 @@ const BabylonFadezProject = (
         more reliable code.
       </h6>
       <div className="flex gap-3">
-        <VisitButton href="https://www.figma.com/" icon={MonoIcons.figma} small>
+        <VisitButton
+          href="https://www.figma.com/"
+          icon={MonoIcons.figma}
+          small
+          newTab
+        >
           View Figma
         </VisitButton>
-        <VisitButton href="https://nextjs.org/" icon={MonoIcons.nextjs} small>
+        <VisitButton
+          href="https://nextjs.org/"
+          icon={MonoIcons.nextjs}
+          small
+          newTab
+        >
           View Next.js
         </VisitButton>
       </div>
     </Block>
     <Block
-      imageSrc="/babylonfadez/daisyui.jpg"
+      imageSrc="/media/babylonfadez/daisyui.jpg"
       imageAlt="DaisyUI Website"
       title="Styling with TailwindCSS and DaisyUI"
       alignText="right"
@@ -77,10 +87,16 @@ const BabylonFadezProject = (
           href="https://tailwindcss.com/"
           icon={MonoIcons.tailwindcss}
           small
+          newTab
         >
           View TailwindCSS
         </VisitButton>
-        <VisitButton href="https://daisyui.com/" icon={MonoIcons.daisyui} small>
+        <VisitButton
+          href="https://daisyui.com/"
+          icon={MonoIcons.daisyui}
+          small
+          newTab
+        >
           View DaisyUI
         </VisitButton>
       </div>

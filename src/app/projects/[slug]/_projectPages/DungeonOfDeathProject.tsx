@@ -4,7 +4,7 @@ const DungeonOfDeathProject = (
   <>
     <Block
       title="An Immersive 2D Dungeon Crawler"
-      imageSrc="/dungeon-of-death/screenshot2.jpg"
+      imageSrc="/media/dungeon-of-death/screenshot2.jpg"
       imageAlt="Dungeon of Death Screenshot"
       imageClassName="object-center"
       alignText="right"
@@ -25,7 +25,7 @@ const DungeonOfDeathProject = (
     </Block>
     <Block
       title="Battle Intense Bosses"
-      imageSrc="/dungeon-of-death/boss.jpg"
+      imageSrc="/media/dungeon-of-death/boss.jpg"
       imageAlt="Dungeon of Death Boss Fight"
       imageClassName="object-center"
       alignText="left"
@@ -50,7 +50,7 @@ const DungeonOfDeathProject = (
     </Block>
     <Block
       title="Weapons, Loot, and Shop Systems"
-      imageSrc="/dungeon-of-death/shop.jpg"
+      imageSrc="/media/dungeon-of-death/shop.jpg"
       imageAlt="Dungeon of Death Shop"
       imageClassName="object-center"
       alignText="right"
@@ -75,7 +75,7 @@ const DungeonOfDeathProject = (
     </Block>
     <Block
       title="Crafting Art in Photoshop"
-      imageSrc="/dungeon-of-death/photoshop.jpg"
+      imageSrc="/media/dungeon-of-death/photoshop.jpg"
       imageAlt="Artwork in Photoshop"
       alignText="left"
     >
@@ -95,7 +95,7 @@ const DungeonOfDeathProject = (
     </Block>
     <Block
       title="Building with Unity and C#"
-      imageSrc="/dungeon-of-death/unity.jpg"
+      imageSrc="/media/dungeon-of-death/unity.jpg"
       imageAlt="Unity Game Engine"
       alignText="right"
     >

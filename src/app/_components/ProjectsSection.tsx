@@ -1,3 +1,4 @@
+import SectionTitle from "@/app/_components/SectionTitle";
 import projects from "@/app/projects/projects.json";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
 import BorderButton from "@/components/ui/border-button";
@@ -11,9 +12,7 @@ const ProjectsSection = () => {
   return (
     <div className="page-container flex flex-col gap-5 lg:gap-10 mt-16">
       <div className="flex justify-between items-center">
-        <h3 className="in-view text-primary font-bold [&:not(.show)]:opacity-0 transition-opacity delay-200 duration-300">
-          MY PROJECTS
-        </h3>
+        <SectionTitle>MY PROJECTS</SectionTitle>
       </div>
       {projects.slice(0, 3).map((project) => (
         <div

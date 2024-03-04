@@ -31,7 +31,12 @@
       {
         "type": "main",
         "text": "Play Dungeon of Death",
-        "link": "#"
+        "link": "https://fadigorges.itch.io/dungeon-of-death"
+      },
+      {
+        "type": "pdf",
+        "text": "View HSC Progress Log",
+        "link": "/media/dungeon-of-death/dungeon-of-death-progress-log.pdf"
       }
     ]
   },

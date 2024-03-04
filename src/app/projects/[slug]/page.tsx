@@ -1,14 +1,6 @@
-import VisitButton, {
-  VisitButtonProps,
-} from "@/app/projects/[slug]/_components/buttons/VisitButton";
+import { buttonTypes } from "@/app/projects/[slug]/_components/VisitButton";
 import { ProjectPages } from "@/app/projects/[slug]/_projectPages";
-import {
-  MonoIcons,
-  frameworks,
-  languages,
-  platforms,
-  tools,
-} from "@/components/Icons";
+import { frameworks, languages, platforms, tools } from "@/components/Icons";
 import CardStack from "@/components/custom/card-stack";
 import Main from "@/components/page/Main";
 import { Title } from "@/components/page/Title";
@@ -23,7 +15,7 @@ import {
 import { cn } from "@/lib/utils/cn";
 import { getProject } from "@/lib/utils/getProject";
 import { UseIntersectionObserver } from "@/lib/utils/useIntersectionObserver";
-import { ArrowLeftIcon, ExternalLinkIcon } from "lucide-react";
+import { ArrowLeftIcon } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -48,19 +40,6 @@ export function generateMetadata({
     description: getProject(params.slug)?.description,
   };
 }
-
-const buttonTypes: {
-  [key: string]: (props: Omit<VisitButtonProps, "icon">) => JSX.Element;
-} = {
-  main: (props) => (
-    <VisitButton icon={ExternalLinkIcon} variant="gradient" {...props} />
-  ),
-  github: (props) => (
-    <VisitButton icon={MonoIcons.github} {...props}>
-      View on Github
-    </VisitButton>
-  ),
-};
 
 const ProjectPage = ({ params }: { params: { slug: string } }) => {
   const project = getProject(params.slug);

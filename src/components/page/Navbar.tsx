@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils/cn";
 import { useScrollPosition } from "@/lib/utils/useScrollPosition";
 import {
   CircleUserIcon,
-  CodeSquareIcon,
+  Code2Icon,
   HomeIcon,
   LucideIcon,
   MailIcon,
@@ -36,7 +36,7 @@ export const navLinks = {
   logo: { link: "/", icon: Icons.iconSvg },
   home: { text: "Home", link: "/", icon: HomeIcon },
   about: { text: "About Me", link: "/about", icon: CircleUserIcon },
-  projects: { text: "Projects", link: "/projects", icon: CodeSquareIcon },
+  projects: { text: "Projects", link: "/projects", icon: Code2Icon },
   contact: { text: "Contact", link: "/contact", icon: MailIcon },
 };
 

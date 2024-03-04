@@ -2,13 +2,11 @@ import Footer from "@/components/page/Footer";
 import Navbar from "@/components/page/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
+import { inter } from "@/lib/fonts";
 import { cn } from "@/lib/utils/cn";
 import "@/styles/globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {

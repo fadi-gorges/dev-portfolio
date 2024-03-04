@@ -1,11 +1,11 @@
 import Block from "@/app/projects/[slug]/_components/Block";
-import VisitButton from "@/app/projects/[slug]/_components/buttons/VisitButton";
+import VisitButton from "@/app/projects/[slug]/_components/VisitButton";
 import { MonoIcons } from "@/components/Icons";
 
 const CitizenshipAUProject = (
   <>
     <Block
-      imageSrc="/citizenshipau/citizenship-tests.jpg"
+      imageSrc="/media/citizenshipau/citizenship-tests.jpg"
       imageAlt="CitizenshipAU Tests"
       title="The Best Resources for Future Citizens"
       alignText="right"
@@ -25,7 +25,7 @@ const CitizenshipAUProject = (
       </h6>
     </Block>
     <Block
-      imageSrc="/citizenshipau/practice-test.jpg"
+      imageSrc="/media/citizenshipau/practice-test.jpg"
       imageAlt="CitizenshipAU Practice Test"
       title="Integrated Translation and Text-to-Speech"
       alignText="left"
@@ -47,7 +47,7 @@ const CitizenshipAUProject = (
       </h6>
     </Block>
     <Block
-      imageSrc="/citizenshipau/nextjs.jpg"
+      imageSrc="/media/citizenshipau/nextjs.jpg"
       imageAlt="Next.js Website"
       title="Harnessing the Power of Next.js"
       alignText="right"
@@ -66,12 +66,12 @@ const CitizenshipAUProject = (
         ensured safer and more reliable code, reducing the likelihood of runtime
         errors.
       </h6>
-      <VisitButton href="https://nextjs.org/" icon={MonoIcons.nextjs}>
+      <VisitButton href="https://nextjs.org/" icon={MonoIcons.nextjs} newTab>
         View Next.js Documentation
       </VisitButton>
     </Block>
     <Block
-      imageSrc="/citizenshipau/tailwindcss.jpg"
+      imageSrc="/media/citizenshipau/tailwindcss.jpg"
       imageAlt="TailwindCSS Website"
       title="TailwindCSS and Shadcn/UI for UI Design"
       alignText="left"
@@ -95,6 +95,7 @@ const CitizenshipAUProject = (
           href="https://tailwindcss.com/"
           icon={MonoIcons.tailwindcss}
           small
+          newTab
         >
           View TailwindCSS
         </VisitButton>
@@ -102,13 +103,14 @@ const CitizenshipAUProject = (
           href="https://ui.shadcn.com/"
           icon={MonoIcons.shadcn}
           small
+          newTab
         >
           View Shadcn/UI
         </VisitButton>
       </div>
     </Block>
     <Block
-      imageSrc="/citizenshipau/payloadcms.jpg"
+      imageSrc="/media/citizenshipau/payloadcms.jpg"
       imageAlt="PayloadCMS page"
       title="PayloadCMS for Backend Management"
       alignText="right"
@@ -127,7 +129,11 @@ const CitizenshipAUProject = (
         data.
       </h6>
 
-      <VisitButton href="https://payloadcms.com/" icon={MonoIcons.payload}>
+      <VisitButton
+        href="https://payloadcms.com/"
+        icon={MonoIcons.payload}
+        newTab
+      >
         View PayloadCMS Documentation
       </VisitButton>
     </Block>
