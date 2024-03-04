@@ -2,7 +2,6 @@ import VisitButton, {
   VisitButtonProps,
 } from "@/app/projects/[slug]/_components/buttons/VisitButton";
 import { ProjectPages } from "@/app/projects/[slug]/_projectPages";
-import projects from "@/app/projects/projects.json";
 import {
   MonoIcons,
   frameworks,
@@ -22,6 +21,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils/cn";
+import { getProject } from "@/lib/utils/getProject";
 import { UseIntersectionObserver } from "@/lib/utils/useIntersectionObserver";
 import { ArrowLeftIcon, ExternalLinkIcon } from "lucide-react";
 import { Metadata } from "next";
@@ -29,10 +29,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { HTMLAttributes } from "react";
-
-export const getProject = (slug: string) => {
-  return projects.find((project) => project.slug === slug);
-};
 
 export function generateMetadata({
   params,
@@ -151,7 +147,7 @@ const ProjectPage = ({ params }: { params: { slug: string } }) => {
         </div>
       </div>
       <Separator className="my-10 lg:my-16" />
-      <div className="space-y-16 lg:space-y-32">{ProjectPage}</div>
+      <div className="space-y-16 lg:space-y-28">{ProjectPage}</div>
     </Main>
   );
 };

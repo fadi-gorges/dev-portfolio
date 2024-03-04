@@ -27,7 +27,7 @@ const BabylonFadezProject = (
     </Block>
     <Block
       imageSrc="/babylonfadez/figma.jpg"
-      imageAlt="2"
+      imageAlt="Figma Website"
       title="Building with Figma and Next.js"
       alignText="left"
     >
@@ -55,7 +55,7 @@ const BabylonFadezProject = (
     </Block>
     <Block
       imageSrc="/babylonfadez/daisyui.jpg"
-      imageAlt="2"
+      imageAlt="DaisyUI Website"
       title="Styling with TailwindCSS and DaisyUI"
       alignText="right"
     >
@@ -63,9 +63,11 @@ const BabylonFadezProject = (
         The styling of BabylonFadez was achieved using TailwindCSS and DaisyUI,
         two powerful tools that brought the design vision to life. TailwindCSS,
         a utility-first CSS framework, provided the flexibility to create custom
-        designs with ease through the use of low-level utility classes. DaisyUI,
-        a plugin that extends TailwindCSS, was utilised to provide beautifully
-        crafted UI components and extending the design possibilities. The
+        designs with ease through the use of low-level utility classes.
+        <br />
+        <br />
+        DaisyUI, a plugin that extends TailwindCSS, was utilised to provide well
+        crafted UI components and to extend the design possibilities. The
         combination of TailwindCSS and DaisyUI allowed for a highly customizable
         design process, resulting in a visually appealing, modern, and
         responsive landing page that encapsulates the vibe of BabylonFadez.

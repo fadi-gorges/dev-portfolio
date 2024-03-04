@@ -8,6 +8,7 @@ import Image from "next/image";
 type BlockProps = React.HTMLAttributes<HTMLDivElement> & {
   imageSrc: string;
   imageAlt: string;
+  imageClassName?: string;
   title: string;
   alignText: "left" | "right";
 };
@@ -15,6 +16,7 @@ type BlockProps = React.HTMLAttributes<HTMLDivElement> & {
 const Block = ({
   imageSrc,
   imageAlt,
+  imageClassName,
   title,
   alignText,
   className,
@@ -44,7 +46,7 @@ const Block = ({
                 src={imageSrc}
                 alt={imageAlt}
                 fill
-                className="object-top object-cover"
+                className={cn("object-top object-cover", imageClassName)}
               />
               <div className="absolute inset-0 w-full h-full flex justify-center items-center gap-3 bg-slate-700/60 text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity">
                 <ZoomInIcon />
@@ -52,7 +54,7 @@ const Block = ({
               </div>
             </DialogTrigger>
             <DialogContent
-              className="w-[95%] h-[95vw] lg:h-[95%] lg:w-[95vh] max-w-full max-h-full"
+              className="w-[95%] h-[95vw] lg:h-[95%] lg:w-[95vh] max-w-full max-h-full sm:rounded-none border-0"
               dialogXClassName="bg-background opacity-100"
             >
               <Image

@@ -26,6 +26,7 @@
     "platform": "Cross Platform",
     "framework": "Unity",
     "languages": ["C#"],
+    "tools": ["Photoshop"],
     "buttons": [
       {
         "type": "main",
