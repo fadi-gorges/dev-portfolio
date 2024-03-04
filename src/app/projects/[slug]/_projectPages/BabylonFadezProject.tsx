@@ -9,7 +9,6 @@ const BabylonFadezProject = (
       imageAlt="BabylonFadez website"
       title="A Modern Landing Page"
       alignText="right"
-      imagePriority
     >
       <h6>
         BabylonFadez is a modern, responsive landing page designed for a local

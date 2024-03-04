@@ -11,7 +11,6 @@ type BlockProps = React.HTMLAttributes<HTMLDivElement> & {
   imageClassName?: string;
   title: string;
   alignText: "left" | "right";
-  imagePriority?: boolean;
 };
 
 const Block = ({
@@ -20,7 +19,6 @@ const Block = ({
   imageClassName,
   title,
   alignText,
-  imagePriority,
   className,
   children,
 }: BlockProps) => {
@@ -49,7 +47,6 @@ const Block = ({
                 alt={imageAlt}
                 fill
                 className={cn("object-top object-cover", imageClassName)}
-                priority={imagePriority}
               />
               <div className="absolute inset-0 w-full h-full flex justify-center items-center gap-3 bg-slate-700/60 text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity">
                 <ZoomInIcon />

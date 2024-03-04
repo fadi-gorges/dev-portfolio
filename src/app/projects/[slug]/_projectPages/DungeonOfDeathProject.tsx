@@ -8,7 +8,6 @@ const DungeonOfDeathProject = (
       imageAlt="Dungeon of Death Screenshot"
       imageClassName="object-center"
       alignText="right"
-      imagePriority
     >
       <h6>
         Dungeon of Death is a 2D fantasy dungeon crawler game that takes players

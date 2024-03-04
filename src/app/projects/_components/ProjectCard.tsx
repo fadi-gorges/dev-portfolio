@@ -30,9 +30,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
           <Image
             src={`/${project.slug}/mockup.png`}
             alt={`${project.title} Image`}
+            className="aspect-[31/18]"
             width={500}
             height={500}
-            priority
           />
         </CardHeader>
         <CardContent className="px-4 lg:px-6 flex-1 space-y-2">

@@ -9,7 +9,6 @@ const CitizenshipAUProject = (
       imageAlt="CitizenshipAU Tests"
       title="The Best Resources for Future Citizens"
       alignText="right"
-      imagePriority
     >
       <h6>
         CitizenshipAU is an online platform designed by Fadi Gorges and Nagham
