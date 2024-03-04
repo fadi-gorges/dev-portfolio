@@ -75,6 +75,7 @@ const HeroSection = () => {
               width={300}
               height={300}
               className="w-56 h-56 rounded-full lg:w-fit lg:h-fit border-4 border-primary/20"
+              priority
             />
           </div>
         </div>

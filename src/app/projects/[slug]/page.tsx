@@ -182,6 +182,7 @@ const MainImage = ({ type, project, className }: MainImageProps) => {
           "object-cover",
           project.screenshotAlignment === "top" ? "object-top" : "object-center"
         )}
+        priority
       />
     </CardStack>
   );

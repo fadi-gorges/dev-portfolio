@@ -32,6 +32,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             alt={`${project.title} Image`}
             width={500}
             height={500}
+            priority
           />
         </CardHeader>
         <CardContent className="px-4 lg:px-6 flex-1 space-y-2">
