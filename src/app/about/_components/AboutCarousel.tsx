@@ -59,6 +59,7 @@ const AboutCarousel = () => {
                     src={img.src}
                     alt={img.alt}
                     fill
+                    priority
                     className="object-cover"
                   />
                 </CardContent>
