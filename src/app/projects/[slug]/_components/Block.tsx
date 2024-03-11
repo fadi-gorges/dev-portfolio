@@ -67,7 +67,7 @@ const Block = ({
       </div>
       <div
         className={cn(
-          "col-span-12 lg:col-span-7 flex flex-col justify-center gap-5 text-muted-foreground",
+          "col-span-12 lg:col-span-7 flex flex-col justify-center gap-5 font-light",
           alignText === "left"
             ? "lg:col-start-1 lg:row-start-1 lg:pr-8"
             : "lg:pl-8"

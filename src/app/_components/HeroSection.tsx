@@ -3,7 +3,6 @@
 import { MonoIcons } from "@/components/Icons";
 import { Button } from "@/components/ui/button";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
-import { chivoMono } from "@/lib/fonts";
 import { cn } from "@/lib/utils/cn";
 import { convertRange } from "@/lib/utils/convertRange";
 import { scrollIntoView } from "@/lib/utils/scrollIntoView";
@@ -97,17 +96,13 @@ const HeroSection = () => {
               : {}
           }
         >
-          <h1 className="font-semibold text-primary tracking-wide">
+          <h1 className="font-extrabold text-primary tracking-wide">
             Full-Stack
             <br />
             Software{" "}
             <TypewriterEffect
               speed={0.1}
-              className={cn(
-                "font-bold tracking-wide md:tracking-normal",
-                chivoMono.className
-              )}
-              cursorClassName="bg-primary -translate-x-4 md:-translate-x-6"
+              cursorClassName="bg-primary -translate-x-2"
               words={[{ text: "Developer" }]}
             />
           </h1>

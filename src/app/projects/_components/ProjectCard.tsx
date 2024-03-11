@@ -30,7 +30,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           <Image
             src={`/media/${project.slug}/mockup.png`}
             alt={`${project.title} Image`}
-            className="aspnshotect-[31/18]"
+            className="aspect-[31/18]"
             width={500}
             height={500}
           />

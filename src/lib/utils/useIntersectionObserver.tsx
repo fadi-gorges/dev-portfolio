@@ -9,7 +9,7 @@ export const useIntersectionObserver = () => {
           if (entry.isIntersecting) entry.target.classList.add("show");
         }),
       {
-        threshold: 0.25,
+        threshold: 0.1,
       }
     );
     document.querySelectorAll(".in-view").forEach((element) => {

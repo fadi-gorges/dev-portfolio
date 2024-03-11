@@ -4,6 +4,14 @@ import { frameworks, languages, platforms, tools } from "@/components/Icons";
 import CardStack from "@/components/custom/card-stack";
 import Main from "@/components/page/Main";
 import { Title } from "@/components/page/Title";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import { Separator } from "@/components/ui/separator";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import {
@@ -15,7 +23,6 @@ import {
 import { cn } from "@/lib/utils/cn";
 import { getProject } from "@/lib/utils/getProject";
 import { UseIntersectionObserver } from "@/lib/utils/useIntersectionObserver";
-import { ArrowLeftIcon } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -60,13 +67,19 @@ const ProjectPage = ({ params }: { params: { slug: string } }) => {
   return (
     <Main>
       <UseIntersectionObserver />
-      <Link
-        href="/projects"
-        className="group flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
-      >
-        <ArrowLeftIcon size={16} />
-        <small>View all Projects</small>
-      </Link>
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink asChild>
+              <Link href="/projects">Projects</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>{project.title}</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
       <div className="grid grid-cols-12 lg:min-h-[386px]">
         <div className="col-span-12 lg:col-span-6 lg:pr-8 flex flex-col justify-center gap-7 lg:gap-3">
           <div className="space-y-3">

@@ -48,7 +48,7 @@ export const buttonTypes: {
   main: (props) => (
     <VisitButton icon={ExternalLinkIcon} variant="gradient" newTab {...props} />
   ),
-  pdf: (props) => <VisitButton icon={BookTextIcon} {...props} />,
+  pdf: (props) => <VisitButton icon={BookTextIcon} newTab {...props} />,
   github: (props) => (
     <VisitButton icon={MonoIcons.github} newTab {...props}>
       View on Github
