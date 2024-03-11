@@ -25,7 +25,7 @@ const DevPortfolioProject = (
       </h6>
     </Block>
     <Block
-      imageSrc="/media/dev-portfolio/1.jpg"
+      imageSrc="/media/dev-portfolio/about.jpg"
       imageAlt="Dev Portfolio About Page"
       title="In-depth About Page"
       alignText="left"

@@ -1,6 +1,7 @@
 import ContactForm from "@/app/contact/_components/ContactForm";
 import Main from "@/components/page/Main";
 import { Title, TitleSeparator } from "@/components/page/Title";
+import { UseIntersectionObserver } from "@/lib/utils/useIntersectionObserver";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,7 +11,8 @@ export const metadata: Metadata = {
 
 const ContactPage = () => {
   return (
-    <Main>
+    <Main className="in-view [&:not(.show)]:opacity-0 [&:not(.show)]:-translate-y-5 transition-[opacity,translate]">
+      <UseIntersectionObserver />
       <Title>Contact</Title>
       <TitleSeparator />
       <div>

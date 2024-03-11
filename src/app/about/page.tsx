@@ -1,5 +1,6 @@
 import AboutCarousel from "@/app/about/_components/AboutCarousel";
 import Main from "@/components/page/Main";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -7,8 +8,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { cn } from "@/lib/utils/cn";
 import { UseIntersectionObserver } from "@/lib/utils/useIntersectionObserver";
+import { Code2Icon, FileTextIcon, MailIcon } from "lucide-react";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About Me",
@@ -17,9 +21,9 @@ export const metadata: Metadata = {
 
 const AboutPage = () => {
   return (
-    <Main className="max-w-5xl">
+    <Main className="max-w-5xl in-view [&:not(.show)]:opacity-0 [&:not(.show)]:-translate-y-5 transition-[opacity,translate]">
       <UseIntersectionObserver />
-      <div className="in-view space-y-6 md:space-y-8 [&:not(.show)]:opacity-0 [&:not(.show)]:-translate-y-5 transition-[opacity,translate]">
+      <div className="space-y-6 md:space-y-8">
         <div>
           <h1 className="font-semibold md:mb-2">Fadi Gorges</h1>
           <h5 className="text-muted-foreground mb-4">
@@ -92,7 +96,7 @@ const AboutPage = () => {
             the gym, hang out with friends, and play video games.
           </h6>
         </div>
-        <div>
+        <div className="pb-3 lg:bg-5">
           <h2 className="font-semibold mb-3">Skills</h2>
           <h6 className="font-light">
             I utilise{" "}
@@ -112,6 +116,38 @@ const AboutPage = () => {
             development using <span className="font-semibold">Unity</span>, and
             data analysis with <span className="font-semibold">Python</span>.
           </h6>
+        </div>
+        <div className="h-24 lg:h-32 grid grid-cols-3 gap-2">
+          <Link
+            href="/media/resume.pdf"
+            className={cn(
+              buttonVariants({ variant: "gradient" }),
+              "h-full col-span-1 flex-col md:flex-row gap-y-3"
+            )}
+          >
+            <FileTextIcon />
+            <h6>View Resume</h6>
+          </Link>
+          <Link
+            href="/projects"
+            className={cn(
+              buttonVariants({ variant: "secondary" }),
+              "h-full col-span-1 flex-col md:flex-row gap-y-3"
+            )}
+          >
+            <Code2Icon />
+            <h6>View Projects</h6>
+          </Link>
+          <Link
+            href="/contact"
+            className={cn(
+              buttonVariants({ variant: "secondary" }),
+              "h-full col-span-1 flex-col md:flex-row gap-y-3"
+            )}
+          >
+            <MailIcon />
+            <h6>Contact Me</h6>
+          </Link>
         </div>
       </div>
     </Main>
