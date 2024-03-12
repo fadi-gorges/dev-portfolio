@@ -1,7 +1,11 @@
+import MainImage from "@/app/projects/[slug]/_components/MainImage";
 import { buttonTypes } from "@/app/projects/[slug]/_components/VisitButton";
+import {
+  FilterIcon,
+  FilterTableRow,
+} from "@/app/projects/[slug]/_components/filter-table";
 import { ProjectPages } from "@/app/projects/[slug]/_projectPages";
 import { frameworks, languages, platforms, tools } from "@/components/Icons";
-import CardStack from "@/components/custom/card-stack";
 import Main from "@/components/page/Main";
 import { Title } from "@/components/page/Title";
 import {
@@ -13,21 +17,12 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Separator } from "@/components/ui/separator";
-import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { cn } from "@/lib/utils/cn";
+import { Table, TableBody } from "@/components/ui/table";
 import { getProject } from "@/lib/utils/getProject";
 import { UseIntersectionObserver } from "@/lib/utils/useIntersectionObserver";
 import { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { HTMLAttributes } from "react";
 
 export function generateMetadata({
   params,
@@ -81,8 +76,8 @@ const ProjectPage = ({ params }: { params: { slug: string } }) => {
         </BreadcrumbList>
       </Breadcrumb>
       <div className="grid grid-cols-12 lg:min-h-[386px]">
-        <div className="col-span-12 lg:col-span-6 lg:pr-8 flex flex-col justify-center gap-7 lg:gap-3">
-          <div className="space-y-3">
+        <div className="col-span-12 lg:col-span-6 lg:pr-8 flex flex-col justify-center gap-7 lg:gap-6">
+          <div className="space-y-1">
             <Title>{project?.title}</Title>
             <h6 className="text-muted-foreground">
               {project?.short_description}
@@ -141,86 +136,6 @@ const ProjectPage = ({ params }: { params: { slug: string } }) => {
       <Separator className="my-10 lg:my-16" />
       <div className="space-y-16 lg:space-y-28">{ProjectPage}</div>
     </Main>
-  );
-};
-
-type MainImageProps = HTMLAttributes<HTMLDivElement> & {
-  type: "sm" | "lg";
-  project: Project;
-};
-
-const MainImage = ({ type, project, className }: MainImageProps) => {
-  const cardStack = (
-    <CardStack
-      className={cn(
-        "w-full ",
-        type === "sm" ? "lg:hidden aspect-video" : "aspect-auto h-full",
-        className
-      )}
-      cardClassName={cn(
-        "relative w-full h-full overflow-hidden",
-        type === "lg" ? "group-hover:border-primary transition-[border]" : ""
-      )}
-      stackClassName={
-        type === "lg" ? "group-hover:border-primary transition-[border]" : ""
-      }
-      hoverEffect
-    >
-      <Image
-        src={`/media/${project?.slug}/screenshot.jpg`}
-        alt={`Screenshot of ${project?.title}`}
-        fill
-        className={cn(
-          "object-cover",
-          project.screenshotAlignment === "top" ? "object-top" : "object-center"
-        )}
-        priority
-      />
-    </CardStack>
-  );
-
-  return project.link ? (
-    <Link href={project?.link} target="_blank">
-      {cardStack}
-    </Link>
-  ) : (
-    cardStack
-  );
-};
-
-const FilterIcon = ({
-  title,
-  children,
-}: {
-  title: string;
-  children: React.ReactNode;
-}) => {
-  return (
-    <TooltipProvider delayDuration={0}>
-      <Tooltip>
-        <TooltipTrigger className="hover:cursor-default">
-          {children}
-        </TooltipTrigger>
-        <TooltipContent>
-          <small>{title}</small>
-        </TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
-  );
-};
-
-const FilterTableRow = ({
-  title,
-  children,
-}: {
-  title: string;
-  children: React.ReactNode;
-}) => {
-  return (
-    <TableRow className="border-0 hover:bg-transparent">
-      <TableCell className="p-0 font-medium w-24 border-r">{title}</TableCell>
-      <TableCell className="py-3">{children}</TableCell>
-    </TableRow>
   );
 };
 

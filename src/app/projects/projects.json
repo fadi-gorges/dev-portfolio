@@ -65,9 +65,8 @@
   {
     "title": "Dev Portfolio",
     "short_description": "A modern developer portfolio website, showcasing my projects and skills.",
-    "description": "A modern software developer portfolio that designed to be responsive and accessible, showcasing my projects, skills and contact information. It is built in NextJS, TypeScript, Shadcn/ui, AceternityUI and styled with TailwindCSS. The website is hosted on Vercel. ",
+    "description": "A modern software developer portfolio that designed to be responsive and accessible, showcasing my projects, skills and contact information. It is built in NextJS, TypeScript, Shadcn/ui, AceternityUI and styled with TailwindCSS. The website is hosted on Vercel.",
     "slug": "dev-portfolio",
-    "github": "https://github.com/fadi-gorges/dev-portfolio",
     "platform": "Web",
     "framework": "Next.js",
     "languages": ["HTML", "CSS", "TypeScript"],
@@ -76,6 +75,23 @@
       {
         "type": "github",
         "link": "https://github.com/fadi-gorges/dev-portfolio"
+      }
+    ]
+  },
+  {
+    "title": "Budgeting App",
+    "short_description": "A budgeting app that helps users manage their finances.",
+    "description": "A windows application built in C#, Windows Forms and SQLite, that helps users manage their finances. It allows users to add, edit and delete transactions, and view their transaction history. The app also displays the user's income and expenses in a pie chart to easily visualise monthly cash flow.",
+    "slug": "budgeting-app",
+    "platform": "Windows",
+    "framework": "WinForms",
+    "languages": ["C#"],
+    "tools": ["SQLite"],
+    "screenshotAlignment": "top",
+    "buttons": [
+      {
+        "type": "github",
+        "link": "https://github.com/fadi-gorges/winforms-budget-app"
       }
     ]
   }

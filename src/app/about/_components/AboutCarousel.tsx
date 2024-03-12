@@ -59,7 +59,7 @@ const AboutCarousel = () => {
                     src={img.src}
                     alt={img.alt}
                     fill
-                    priority
+                    sizes="(max-width: 768px) 50vw, 33vw"
                     className="object-cover"
                   />
                 </CardContent>

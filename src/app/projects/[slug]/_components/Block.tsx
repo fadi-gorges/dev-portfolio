@@ -59,7 +59,8 @@ const Block = ({
                 src={imageSrc}
                 alt={imageAlt}
                 fill
-                className="object-top object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-contain"
               />
             </DialogContent>
           </Dialog>

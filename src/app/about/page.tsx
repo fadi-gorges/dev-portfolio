@@ -118,8 +118,9 @@ const AboutPage = () => {
           </h6>
         </div>
         <div className="h-24 lg:h-32 grid grid-cols-3 gap-2">
-          <Link
+          <a
             href="/media/resume.pdf"
+            target="_blank"
             className={cn(
               buttonVariants({ variant: "gradient" }),
               "h-full col-span-1 flex-col md:flex-row gap-y-3"
@@ -127,7 +128,7 @@ const AboutPage = () => {
           >
             <FileTextIcon />
             <h6>View Resume</h6>
-          </Link>
+          </a>
           <Link
             href="/projects"
             className={cn(
