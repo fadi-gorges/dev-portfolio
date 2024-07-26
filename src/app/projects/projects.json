@@ -19,6 +19,29 @@
     ]
   },
   {
+    "title": "AusBizGrowth",
+    "short_description": "A demo dashboard web app to determine the growth potential of SMEs.",
+    "description": "AusBizGrowth is a dashboard web app designed to help users determine the growth potential of small-medium enterprises (SMEs).",
+    "slug": "ausbizgrowth",
+    "link": "https://sme-growth-project.vercel.app/",
+    "platform": "Web",
+    "framework": "Next.js",
+    "languages": ["HTML", "CSS", "TypeScript"],
+    "tools": ["TailwindCSS", "PayloadCMS", "MongoDB", "Shadcn/ui"],
+    "screenshotAlignment": "top",
+    "buttons": [
+      {
+        "type": "main",
+        "text": "Visit AusBizGrowth",
+        "link": "https://sme-growth-project.vercel.app/"
+      },
+      {
+        "type": "github",
+        "link": "https://github.com/fadi-gorges/SMEGrowthProject/"
+      }
+    ]
+  },
+  {
     "title": "Dungeon of Death",
     "short_description": "A 2D fantasy dungeon crawler game featuring dungeons, monsters, and loot.",
     "description": "Dungeon of Death is a 2D fantasy dungeon crawler game built in Unity, in which the player explores unique dungeons, fights monsters, and collects loot. This game received an assessment mark of 95/100 (Band 6) as my Industrial Technology Multimedia HSC Major Project.",
@@ -75,6 +98,28 @@
       {
         "type": "github",
         "link": "https://github.com/fadi-gorges/dev-portfolio"
+      }
+    ]
+  },
+  {
+    "title": "3D Garden",
+    "short_description": "A 3D garden scene with day-night simulation built in Three.js",
+    "description": "A 3D garden scene with day-night simulation built in Three.js, featuring camera orbit controls and scene edit functions.",
+    "slug": "3d-garden",
+    "link": "https://fadi-gorges.github.io/3D-Garden/",
+    "platform": "Web",
+    "framework": "Three.js",
+    "languages": ["HTML", "CSS", "TypeScript"],
+    "screenshotAlignment": "top",
+    "buttons": [
+      {
+        "type": "main",
+        "text": "View 3D Garden",
+        "link": "https://fadi-gorges.github.io/3D-Garden/"
+      },
+      {
+        "type": "github",
+        "link": "https://github.com/fadi-gorges/3D-Garden"
       }
     ]
   },
