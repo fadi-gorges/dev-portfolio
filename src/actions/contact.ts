@@ -13,8 +13,8 @@ export const contactSendAction = async (data: ContactFormData) => {
   try {
     await mailer.sendMail({
       from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
-      subject: `MESSAGE from ${validation.data.email}`,
+      to: process.env.NEXT_PUBLIC_CONTACT_EMAIL,
+      subject: `PORTFOLIO MESSAGE from ${validation.data.email}`,
       text: (
         `Name: ${validation.data.name}\n` +
         `Email: ${validation.data.email}\n\n` +

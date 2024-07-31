@@ -19,10 +19,10 @@ const ContactPage = () => {
         <h5>Feel free to send me an email at:</h5>
         <h5>
           <a
-            href="mailto:fadi@fadigorges.dev"
+            href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
             className="relative text-blue-400 after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-blue-400 after:transition-[width] after:ease-out after:duration-300 hover:after:w-full"
           >
-            fadi@fadigorges.dev
+            {process.env.NEXT_PUBLIC_CONTACT_EMAIL}
           </a>
         </h5>
       </div>
