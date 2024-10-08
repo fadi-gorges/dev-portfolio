@@ -1,7 +1,6 @@
 FROM node:22-alpine AS base
 
 ARG NEXT_PUBLIC_CONTACT_EMAIL
-RUN echo "Build-time email: $NEXT_PUBLIC_CONTACT_EMAIL"
 ENV NEXT_PUBLIC_CONTACT_EMAIL=$NEXT_PUBLIC_CONTACT_EMAIL
 
 # Install dependencies only when needed
