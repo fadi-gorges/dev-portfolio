@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Log in to GitLab Container Registry
+        run: echo ${{ secrets.GITLAB_REGISTRY_PASSWORD }} | docker login -u ${{ secrets.GITLAB_REGISTRY_USERNAME }} --password-stdin registry.gitlab.com
+        
+      - name: Build the Docker image
+        run: docker build -t registry.gitlab.com/fadi-gorges/dev-portfolio .
+
+      - name: Push Docker image
+        run: docker push registry.gitlab.com/fadi-gorges/dev-portfolio
