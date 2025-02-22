@@ -50,7 +50,7 @@ const AboutPage = () => {
                     Bachelor of Engineering (Honours)
                   </CardTitle>
                   <CardDescription className="text-sm md:text-lg">
-                    University of Technology Sydney (2022-2026)
+                    University of Technology Sydney (2022-2025)
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="p-0">
@@ -82,6 +82,64 @@ const AboutPage = () => {
               </Card>
             </div>
           </div>
+        </div>
+        <div className="pt-8 md:pt-4 mb:pt-0 space-y-4">
+          <h2 className="font-semibold mb-3">SWE Experience</h2>
+          <Card className="p-4 md:p-6 h-full">
+            <CardHeader className="p-0 pb-2 space-y-0">
+              <CardTitle className="text-sm md:text-lg">
+                Software Engineer - Part Time
+              </CardTitle>
+              <CardDescription className="text-sm md:text-lg">
+                Macquarie Group (Feb 2025 - Current)
+                <br />
+                COG MAM Investment Vehicles
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="p-0">
+              <ul className="list-disc ml-8">
+                <li className="text-sm md:text-base">
+                  Maintain the transaction reporting pipeline in use by MAM.
+                </li>
+                <li className="text-sm md:text-base">
+                  Develop front-end for AWS SQS message monitoring application.
+                </li>
+                <li className="text-sm md:text-base">Attend to BAU tickets.</li>
+              </ul>
+            </CardContent>
+          </Card>
+          <Card className="p-4 md:p-6 h-full">
+            <CardHeader className="p-0 pb-2 space-y-0">
+              <CardTitle className="text-sm md:text-lg">
+                Software Engineering Intern
+              </CardTitle>
+              <CardDescription className="text-sm md:text-lg">
+                Macquarie Group (Dec 2024 - Feb 2025)
+                <br />
+                COG MAM Investment Vehicles
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="p-0">
+              <ul className="list-disc ml-8">
+                <li className="text-sm md:text-base">
+                  Developed the regulatory reporting ETL system for the
+                  collateral pipeline in use by MAM.
+                </li>
+                <li className="text-sm md:text-base">
+                  Thoroughly tested the pipeline through unit and integration
+                  testing.
+                </li>
+                <li className="text-sm md:text-base">
+                  Communicated effectively with stakeholders in the business
+                  team to understand critical requirements.
+                </li>
+                <li>
+                  Updated the Linux operating system throughout AWS EC2
+                  instances team-wide.
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
         </div>
         <div>
           <h2 className="font-semibold mb-3">Interests</h2>
@@ -119,7 +177,7 @@ const AboutPage = () => {
         </div>
         <div className="h-24 lg:h-32 grid grid-cols-3 gap-2">
           <a
-            href="/media/resume.pdf"
+            href="/resume.pdf"
             target="_blank"
             className={cn(
               buttonVariants({ variant: "gradient" }),
